@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+<comment>BIP Solution ETL properties file</comment>
+<!-- if query-etl-batch-len>1 then query-etl-oneid where clause mut be in format of in (:id) -->
+<entry key="query-etl-batch-len">1000</entry>
+<entry key="query-etl-id-prefix">'</entry>
+<entry key="query-etl-id-suffix">'</entry>
+<entry key="query-maxid">select nvl(max(id2),0) from table1_dest</entry>
+<entry key="query-count">
+select count(*) from table1_src dext
+ where dext.id1>:maxid_int
+</entry>
+<entry key="query-onebyone-id">id1</entry>
+<entry key="query-etl">
+	select  id1
+	from table1_src 
+	where id1>:maxid_int
+    order by id1
+</entry>
+<entry key="query-etl-oneid">
+select  id1,name1,code1
+from table1_src 
+where id1 in (:id)
+</entry>
+<entry key="sql-insert">
+	INSERT INTO table1_dest(id2,name2,code2)
+	VALUES(:id2,':name2',:code2)
+</entry>
+<entry key="sql-update">
+	update table1_dest set 
+	name2=':name2'
+	,code2=:code2
+	where id2=:id2
+</entry>
+
+
+<!-- CODEMELLI -->
+<entry key="query-count-codemelli">
+</entry>
+<entry key="query-etl-codemelli">
+</entry>
+
+<!-- TARIKH -->
+<entry key="query-count-tarikh">
+</entry>
+<entry key="query-etl-tarikh">
+</entry>
+
+
+<!-- tableid -->
+<entry key="query-count-tableid">
+select count(*) from table1_src dext
+ where id1=':maxid'
+</entry>
+<entry key="query-etl-tableid">
+	select  id1 
+	from table1_src dext
+	where id1=':maxid'
+</entry>
+
+<!-- ETL start & finish commands -->
+<entry key="preStartETL">
+</entry>
+<entry key="postEndETL">
+</entry>
+
+<!-- mappings -->
+<entry key="mappings">
+	:id2=id1
+	:name2=name1
+	:code2=code1
+</entry>
+
+
+
+</properties>
+																
+																

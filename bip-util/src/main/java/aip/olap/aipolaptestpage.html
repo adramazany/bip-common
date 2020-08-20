@@ -1,0 +1,13 @@
+<html>
+<body>
+	<form action="AIPOlap" method="post">
+		<input type="hidden" name="reqCode" value="executeMdx">
+		<textarea name="mdx">
+			select { [Measures].[مبلغ کل]	} on columns 
+			, { [فرآورده].[رنگ].members } on rows
+			from [حواله بافیش]
+		</textarea>
+		<input type="submit" value="executeMdx">
+	</form>
+</body>
+</html>

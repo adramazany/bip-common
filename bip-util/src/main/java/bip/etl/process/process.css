@@ -1,0 +1,39 @@
+#process tr.oddRow {
+	background-color: white;
+}
+
+#process tr.evenRow {
+	background-color: #F0F7FE;
+}
+
+#process .clsProcess{
+	width: 50px; height: 50px; cursor: pointer;
+}
+#process .description{
+	width:500px;
+}
+
+#process .query{
+	color:navy;
+}
+
+#process .exception{
+	color:red;
+}
+
+#process .progress{
+	color:yellow;
+}
+
+#process .progressbar{
+	height:20px;width: 100%px;border:2px outset gray;text-align: center;color:blue;
+}
+#process .bar{
+	background-color:	#6495ED;width:0%;height:20px;	
+}
+#process #text{
+	position: absolute;
+}
+#process .clsProcessImage{
+	width: 40px; height: 40px; cursor: pointer;	
+}

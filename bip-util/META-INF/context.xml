@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+   <Resource name="jdbc/SampleDB" auth="Container"
+       type="javax.sql.DataSource" 
+       username="app" password="app"
+       driverClassName="org.apache.derby.jdbc.ClientDriver"
+       url="jdbc:derby://localhost:1527/sample" 
+       maxActive="8"    /> 
+       
+	<Resource name="jdbc/aipsearchlogds" auth="Container" 
+	driverClassName="oracle.jdbc.OracleDriver" 
+	maxActive="20" maxIdle="10" maxWait="10000" 
+	type="javax.sql.DataSource" 
+	url="jdbc:oracle:thin:@localhost:1521:orcl" 
+	username="aiplaw" password="aiplaw"/>       
+</Context> 

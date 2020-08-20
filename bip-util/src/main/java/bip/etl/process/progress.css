@@ -1,0 +1,7 @@
+.example{background:#FED8A3;width:300px;height:30px; font-size:80%;border:1px #FF9500 solid;margin:20px auto;padding:15px;position:relative;}
+h3 {text-align:center}
+
+.pbar .ui-progressbar-value {display:block !important}
+.pbar {overflow: hidden}
+.percent {position:relative;text-align: center;}
+.elapsed {position:relative;text-align: center;}

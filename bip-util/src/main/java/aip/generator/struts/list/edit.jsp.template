@@ -1,0 +1,38 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ taglib uri="/WEB-INF/AIPTag.tld" prefix="aip"%>
+<head>
+	<title>@title@</title>
+</head>
+
+<aip:headerTitle	title="@title@"  />
+
+<form action="t_@name_lower@.do" method="POST">
+	<input type="hidden" name="reqCode" value="save"/>
+	<html:hidden name="entity" property="@idColumn@"/>
+
+	<aip:skin type="HEAD">
+		<div align="center">
+			<table width="100%">
+				@@visiblecolumns@@
+				<tr><td class="viewTitles">@visiblecolumn_title@:</td>
+					<td class="viewData">
+						<html:text name="entity" property="@visiblecolumn_lower@"/>
+					</td>
+				</tr>
+				@@/visiblecolumns@@
+			</table>
+		</div>
+	</aip:skin>
+	<aip:skin type="BUTTONS">
+	<table>
+		<tr>
+			<td>
+				<input type="submit" class="btnOK" value="تایید">
+			</td>
+		</tr>
+	</table>
+	</aip:skin>
+</form>

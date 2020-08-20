@@ -1,0 +1,50 @@
+########################################
+#	ETLAbstract                        #
+########################################
+bip.etl.etlSourceDS=jdbc/aipsabtbi-dest
+bip.etl.etlDestinationDS=jdbc/aipsabtbi-dest
+bip.etl.xmlfile.suffix=.oracle
+
+#bip.etl.olapprocess.url=
+#bip.etl.olapprocess.database=Cube
+#bip.etl.olapprocess.username=
+#bip.etl.olapprocess.password=
+
+########################################
+#	ProcessAction                      #
+########################################
+bip.etl.otherParams=codemelli,edare
+
+########################################
+#	ProcessService                     #
+########################################
+bip.etl.mdx.mdxfile.suffix=.mondrian
+bip.etl.cubeDS=jdbc/aipsabtbicube
+
+bip.etl.table2etl.fact_tavalod=aip.sabtbi.etl.FactTavalodETL
+bip.etl.table2etl.fact_fot=aip.sabtbi.etl.FactFotETL
+bip.etl.table2etl.fact_ezdevaj=aip.sabtbi.etl.FactEzdevajETL
+bip.etl.table2etl.fact_talagh=aip.sabtbi.etl.FactTalaghETL
+bip.etl.table2etl.dim_mahal=aip.sabtbi.etl.MahalETL
+bip.etl.table2etl.dim_edare=aip.sabtbi.etl.EdareETL
+bip.etl.table2etl.dim_mostanadtavalod=aip.sabtbi.etl.MostanadtavalodETL
+bip.etl.table2etl.dim_semat=aip.sabtbi.etl.SematETL
+bip.etl.table2etl.dim_tatilat=aip.sabtbi.etl.TatilatETL
+bip.etl.table2etl.dim_mostanadfot=aip.sabtbi.etl.MostanadfotETL
+bip.etl.table2etl.dim_elatefot=aip.sabtbi.etl.ElatefotETL
+bip.etl.table2etl.dim_shoghl=aip.sabtbi.etl.ShoghlETL
+bip.etl.table2etl.dim_tahsilat=aip.sabtbi.etl.TahsilatETL
+
+bip.etl.table2etl.table1=bip.etl.ETLDefault
+bip.etl.table2etl.table2=bip.etl.ETLDefault
+
+bip.etl.table_prerequisits.fact_tavalod=dim_mahal,dim_edare,dim_mostanadtavalod,dim_semat
+bip.etl.table_prerequisits.fact_fot=dim_mahal,dim_edare,dim_mostanadfot,dim_elatefot
+bip.etl.table_prerequisits.fact_ezdevaj=dim_mahal,dim_edare,dim_shoghl,dim_tahsilat
+bip.etl.table_prerequisits.fact_talagh=dim_mahal,dim_edare,dim_shoghl,dim_tahsilat
+bip.etl.table_prerequisits.dim_edare=dim_mahal
+
+########################################
+#	ETLDefault                         #
+########################################
+bip.etl.etl_log.tablename=etl_log

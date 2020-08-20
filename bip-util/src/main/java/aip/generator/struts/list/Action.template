@@ -1,0 +1,72 @@
+package <packagepath>;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import aip.util.AIPErrorHandler;
+import aip.util.AIPException;
+import aip.util.NVL;
+import aip.util.doc.AIPDocManager;
+
+public class <name>Action extends Action {
+	public ActionForward execute(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response) {
+
+		ActionForward af = null;
+		String reqCode = request.getParameter(mapping.getParameter());	
+		<name>LSTParam param = getParam(request);
+		
+		if (reqCode == null || "".equalsIgnoreCase(reqCode) || "view".equalsIgnoreCase(reqCode)) {
+			af = mapping.findForward("view");
+		}else if("ShowParamDialog".equalsIgnoreCase(reqCode)){
+			<name>ComboLST comboLST = new <name>ComboLST(); 
+			try {
+				comboLST = (new <name>DAO()).get<name>ComboLST();
+			} catch (AIPException e) {
+				e.printStackTrace();
+				AIPErrorHandler.setAttributeErrorMessage(request, e, null);
+			}
+			request.setAttribute("comboLST", comboLST);
+			af = mapping.findForward("ShowParamDialog");
+			return af;
+		}else if("your_code".equalsIgnoreCase(reqCode)){
+		}
+		
+		<name>LST lst =new <name>LST();
+		try{
+			lst = (new <name>DAO()).get<name>LST(param);
+		}catch (Exception e) {
+			e.printStackTrace();
+			AIPErrorHandler.setAttributeErrorMessage(request, e, null);
+		}
+		request.setAttribute("list", lst);
+		
+		/*
+		 * Print
+		 */
+		String title="<title>";
+		AIPDocManager.printOrSaveDocument(request, response, reqCode,param.getPrintParam(), lst, title);
+		
+		return af;
+		
+		
+	}
+	
+	private <name>LSTParam getParam(HttpServletRequest request) {
+		<name>LSTParam param = new <name>LSTParam();
+		
+		param.fillParameters(request);
+		
+		<paramcolumns>
+		param.set<paramcolumn_captital>(NVL.get<paramcolumnclass_nvl>(request.getParameter("<paramcolumn_lower>")));
+	    </paramcolumns>
+
+		request.setAttribute("param", param);
+		return param;
+	}
+
+}

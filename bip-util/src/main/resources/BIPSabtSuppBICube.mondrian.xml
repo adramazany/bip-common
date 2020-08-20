@@ -1,0 +1,1051 @@
+<Schema name="BIPSabtSuppBICube">
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimShahrrosta">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_SHAHRROSTA" />
+			<Level name="shahrrosta" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SHAHRROSTA"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimJarimoavaghe">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_JARIMOAVAGHE" />
+			<Level name="jarimoavaghe" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="JARYMOAVAGHE"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimJensiat">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_JENSIAT" />
+			<Level name="jensiat" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="JENSIAT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimEdare">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<View alias="DIM_EDARE_filtered">
+				<SQL dialect="generic">
+					<![CDATA[select * from DIM_EDARE where (id>=100 and office_type!='9') or ID=5 or ID=23 order by ORDINAL_OSTAN asc,ORDINAL_SHAHRESTAN asc,ORDINAL_EDARE asc]]>
+				</SQL>
+			</View>
+			<Level name="ostan" visible="true" column="F_MAHALOSTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="OSTAN">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_OSTAN</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="shahrestan" visible="true" column="F_MAHALSHAHRESTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SHAHRESTAN">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_SHAHRESTAN</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="edare" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="EDARE">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_EDARE</SQL></OrdinalExpression>-->
+			</Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimEdareKhareji">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<View alias="DIM_EDARE_KHAREJI_filtered">
+				<SQL dialect="generic">
+					<![CDATA[select * from DIM_EDARE_KHAREJI where (id>=100 and office_type!='9') or ID=5 or ID=23  order by ORDINAL_OSTAN asc,ORDINAL_SHAHRESTAN asc,ORDINAL_EDARE asc]]>
+				</SQL>
+			</View>
+			<Level name="ostan" visible="true" column="F_MAHALOSTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="OSTAN">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_OSTAN</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="shahrestan" visible="true" column="F_MAHALSHAHRESTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SHAHRESTAN">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_SHAHRESTAN</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="edare" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="EDARE">
+				<!-- 	  	<OrdinalExpression><SQL dialect="generic">ORDINAL_EDARE</SQL></OrdinalExpression>-->
+			</Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="TimeDimension" visible="true" highCardinality="false" name="DimTarikh">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_TARIKH" />
+			<Level name="saal" visible="true" column="SAAL" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never"/>
+			<Level name="nimsaal" visible="true" column="NIMSAAL" type="Integer" uniqueMembers="false" levelType="TimeHalfYears" hideMemberIf="Never" captionColumn="NIMSAAL_NAM"/>
+			<Level name="fasl" visible="true" column="FASL" type="Integer" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" captionColumn="FASL_NAM"/>
+			<Level name="mah" visible="true" column="MAH" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" captionColumn="MAH_NAM"/>
+			<Level name="rooz" visible="true" column="ROOZ" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never"/>
+			<Level name="tarikh" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTakhirsabt">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_TAKHIRSABT" />
+			<Level name="takhirsabt" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="TAKHIRSABT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimGrohseni">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<!--<Table name="DIM_GROHSENI" ></Table>-->
+			<View alias="DIM_GROHSENI_filtered">
+				<SQL dialect="generic">
+					<![CDATA[ select * from DIM_GROHSENI order by id ]]>
+				</SQL>
+			</View>
+			<Level name="grohseni" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="GROHSENI" ordinalColumn="ID"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimGrohsenifot">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<!--<Table name="DIM_GROHSENIFOT" ></Table>-->
+			<View alias="DIM_GROHSENIFOT_filtered">
+				<SQL dialect="generic">
+					<![CDATA[ select * from DIM_GROHSENIFOT order by id ]]>
+				</SQL>
+			</View>
+			<Level name="grohseni" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="GROHSENI"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimSemat">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_SEMAT" />
+			<Level name="semat" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SEMAT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMostanadtavalod">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MOSTANADTAVALOD" />
+			<Level name="mostanadtavalod" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="MOSTANADTAVALOD"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimChandgholoo">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_CHANDGHOLOO" />
+			<Level name="chandgholoo" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="CHANDGHOLOO"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimElatefot">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_ELATEFOT" />
+			<Level name="elatefot" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="ELATEFOT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMostanadfot">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MOSTANADFOT" />
+			<Level name="mostanadfot" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="MOSTANADFOT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimSen">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_SEN" />
+			<Level name="sen" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SEN"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimEkhtelafsen">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_EKHTELAFSEN" />
+			<Level name="ekhtelafsen" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="EKHTELAFSEN"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTahsilat">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<!-- <Table name="DIM_TAHSILAT" >      </Table> -->
+			<View alias="DIM_TAHSILAT_filtered">
+				<SQL dialect="generic">
+					<![CDATA[	select * from DIM_TAHSILAT order by sort,id	]]>
+				</SQL>
+			</View>
+			<Level name="tahsilat" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="TAHSILAT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimShoghl">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_SHOGHL" />
+			<Level name="raste" visible="true" column="RASTEID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="RASTE"/>
+			<Level name="zirraste" visible="true" column="ZIRRASTEID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="ZIRRASTE"/>
+			<Level name="reshte" visible="true" column="RESHTEID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="RESHTE"/>
+			<Level name="shoghl" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SHOGHL"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimDin">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_DIN" />
+			<Level name="din" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="DIN"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimModatezdevaj">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;">
+			<Table name="DIM_MODATEZDEVAJ" />
+			<Level name="modatezdevaj" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="MODATEZDEVAJ"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimTedadezdevaj">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;">
+			<Table name="DIM_TEDADEZDEVAJ" />
+			<Level name="tedadezdevaj" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="TEDADEZDEVAJ"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimFaselezamani">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_FASELEZAMANI" />
+			<Level name="faselezamani" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="FASELEZAMANI"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMahal">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MAHAL" />
+			<Level name="mahal" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="MAHAL"/>
+		</Hierarchy>
+		<Hierarchy name="mahalha" visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;">
+			<Table name="DIM_MAHAL" />
+			<Level name="mahalha" visible="true" column="ID" parentColumn="F_MAHAL" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="MAHAL"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimFotraked">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_FOTRAKED" />
+			<Level name="fotraked" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="FOTRAKED"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimCodeactiveflag">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_CODEACTIVEFLAG" />
+			<Level name="codeactiveflag" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="CODEACTIVEFLAG"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimInactivemarriagereason">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_INACTIVEMARRIAGEREASON" />
+			<Level name="Inactivemarriagereason" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="INACTIVEMARRIAGEREASON"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimInactivedivorcereason">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_INACTIVEDIVORCEREASON" />
+			<Level name="Inactivedivorcereason" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="INACTIVEDIVORCEREASON"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimControlflag">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="CONTROL_FLAG_CODE">
+			<Table name="CONTROL_FLAG_HC" schema="ICRSUSER"/>
+			<Level name="controlflag" visible="true" column="CONTROL_FLAG_CODE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="CONTROL_FLAG_DESC"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimAddrecordstage">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="ADD_RECORD_STAGE_HC" schema="ICRSUSER"/>
+			<Level name="addrecordstage" visible="true" column="ADD_RECORD_STAGE_CODE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="ADD_RECORD_STAGE_DESC"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimAddrecordtype">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="ADD_RECORD_TYPE_HC" schema="ICRSUSER"/>
+			<Level name="addrecordtype" visible="true" column="ADD_RECORD_TYPE_CODE" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="ADD_RECORD_TYPE_DESC"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimModatezdevajTavalod">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;">
+			<Table name="DIM_MODATEZDEVAJ_TAVALOD" />
+			<Level name="modatezdevaj" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="MODATEZDEVAJ"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimDeathReason">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_DEATH_REASON" />
+			<Level name="category" visible="true" column="F_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="CATEGORY"/>
+			<Level name="subcategory" visible="true" column="F_SUBCATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="SUBCATEGORY"/>
+			<Level name="deathreason" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="DEATH_REASON"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimDivorceConfirmAut">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_DIVORCE_CONFIRM_AUT" />
+			<Level name="divorceconfirmaut" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="DIVORCE_CONFIRM_AUT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimDivorceTimes">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_DIVORCE_TIMES" />
+			<Level name="divorcetimes" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="DIVORCE_TIMES"/>
+		</Hierarchy>
+	</Dimension>
+	<!-- 	  				select * from DIM_GEO where f_shahrestan is not null order by OSTAN_ORDINAL_FOREIGN asc,SHAHRESTAN_ORDINAL asc,GEO_ORDINAL asc -->
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimGeo">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<View alias="DIM_GEO_filtered">
+				<SQL dialect="generic">
+					<![CDATA[ select OSTAN,F_OSTAN,SHAHRESTAN,F_SHAHRESTAN,GEO,ID ,OSTAN_ORDINAL_FOREIGN,SHAHRESTAN_ORDINAL,GEO_ORDINAL  from DIM_GEO  where  (f_shahrestan is not null) or  (f_noemahal = 3 and id!=90019) order by OSTAN_ORDINAL_FOREIGN asc,SHAHRESTAN_ORDINAL asc,GEO_ORDINAL asc	]]>
+				</SQL>
+			</View>
+			<!-- union all select 'Countries' OSTAN,-2 F_OSTAN,OSTAN as SHAHRESTAN,f_ostan as F_SHAHRESTAN,GEO,ID ,4000000 OSTAN_ORDINAL_FOREIGN,OSTAN_ORDINAL_FOREIGN as SHAHRESTAN_ORDINAL,GEO_ORDINAL  from DIM_GEO 	where f_noemahal = 3 and id!=90019  -->
+			<Level name="ostan" visible="true" column="F_OSTAN" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="OSTAN">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">OSTAN_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="shahrestan" visible="true" column="F_SHAHRESTAN" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="SHAHRESTAN">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">SHAHRESTAN_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="geo" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="GEO">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">GEO_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimGeoShahrBakhsh">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<View alias="DIM_GEO_ShahrBakhsh_filtered">
+				<SQL dialect="generic">
+					<![CDATA[ select OSTAN,F_OSTAN,SHAHRESTAN,F_SHAHRESTAN	,case f_noemahal when 6 then BAKHSH else GEO end GEO	,case f_noemahal when 6 then F_BAKHSH else ID end ID ,OSTAN_ORDINAL_FOREIGN,SHAHRESTAN_ORDINAL	,case f_noemahal when 6 then BAKHSH_ORDINAL else GEO_ORDINAL end GEO_ORDINAL from DIM_GEO  where (f_shahrestan is not null)	or (f_noemahal = 3 and id!=90019)  	order by OSTAN_ORDINAL_FOREIGN asc,SHAHRESTAN_ORDINAL asc,GEO_ORDINAL asc	]]>
+				</SQL>
+			</View>
+			<Level name="ostan" visible="true" column="F_OSTAN" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="OSTAN">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">OSTAN_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="shahrestan" visible="true" column="F_SHAHRESTAN" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="SHAHRESTAN">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">SHAHRESTAN_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+			<Level name="geo" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="GEO">
+				<!-- 			<OrdinalExpression><SQL dialect="generic">GEO_ORDINAL</SQL></OrdinalExpression>-->
+			</Level>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMarriageConfirmAut">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MARRIAGE_CONFIRM_AUT" />
+			<Level name="marriageconfirmaut" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="MARRIAGE_CONFIRM_AUT"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMarriageNationalityType">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MARRIAGE_NATIONALITY_TYPE" />
+			<Level name="marriagenationalitytype" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="MARRIAGE_NATIONALITY_TYPE"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimMarriageType">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_MARRIAGE_TYPE" />
+			<Level name="marriagetype" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="MARRIAGE_TYPE"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimName">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_NAME" />
+			<Level name="name" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="NAME"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimStillBirth">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_STILLBIRTH" />
+			<Level name="stillbirth" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="STILLBIRTH"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="TimeDimension" visible="true" highCardinality="false" name="DimTarikhMonth">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_TARIKH" />
+			<Level name="month" visible="true" column="MAH" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" captionColumn="MAH_NAM"/>
+			<Level name="tarikh" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimNotary">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<View alias="DIM_NOTARY_filtered">
+				<SQL dialect="generic">
+					<![CDATA[ select n.*,g.F_OSTAN,g.OSTAN,g.F_SHAHRESTAN,SHAHRESTAN from dim_notary n left join dim_geo g on g.id=n.f_geo order by OSTAN_ORDINAL asc,SHAHRESTAN_ORDINAL asc,GEO_ORDINAL asc,NOTARY asc	]]>
+				</SQL>
+			</View>
+			<Level name="ostan" visible="true" column="F_OSTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="OSTAN"/>
+			<Level name="shahrestan" visible="true" column="F_SHAHRESTAN" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SHAHRESTAN"/>
+			<Level name="notary" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="NOTARY"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimChildarrange">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_CHILDARRANGE" />
+			<Level name="childarrange" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="CHILDARRANGE"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimFaselesaal">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_FASELESAAL" />
+			<Level name="faselesaal" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="FASELESAAL"/>
+		</Hierarchy>
+	</Dimension>
+
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimIs">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_IS" />
+			<Level name="isyesno" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="IS_YES_NO"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimUnder1year">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_UNDER1YEAR" />
+			<Level name="under1year" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="UNDER1YEAR"/>
+		</Hierarchy>
+	</Dimension>
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimUnder5year">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_UNDER5YEAR" />
+			<Level name="under5year" visible="true" column="ID" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never"  captionColumn="UNDER5YEAR"/>
+		</Hierarchy>
+	</Dimension>
+
+
+	<Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimSenfot">
+		<Hierarchy visible="true" hasAll="true" allMemberName="All" allMemberCaption="&#1580;&#1605;&#1593;" primaryKey="ID">
+			<Table name="DIM_SENFOT" ></Table>
+			<Level name="sen" visible="true" column="ID" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" captionColumn="SEN" ordinalColumn="ID"/>
+		</Hierarchy>
+	</Dimension>
+
+
+
+	<!-- select * from FACT_TAVALOD where CONTROL_FLAG!=5 -->
+	<Cube name="Tavalod" visible="true" cache="true" enabled="true">
+		<View alias="FACT_TAVALOD_filtered">
+			<SQL dialect="generic">
+				<![CDATA[ select f.*,case g.f_noemahal when 1 then g.id else g.f_bakhsh end as f_geo_birth_shahrbakhsh from FACT_TAVALOD f left join DIM_GEO g on g.id=f.F_GEO_BIRTH where CONTROL_FLAG!=5	]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA" highCardinality="false"/>
+		<DimensionUsage source="DimJarimoavaghe" name="DimJarimoavaghe" visible="true" foreignKey="F_JARIMOAVAGHE_TAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimJensiat" name="DimJensiat" visible="true" foreignKey="F_JENSIAT" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodtavalod" visible="true" foreignKey="F_TARIKH_VORODTAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabttavalod" visible="true" foreignKey="F_TARIKH_SABTTAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhtavalod" visible="true" foreignKey="F_TARIKH_TAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimTakhirsabt" name="DimTakhirsabt" visible="true" foreignKey="F_TAKHIRSABT_TAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniMother" visible="true" foreignKey="F_GROHSENI_MOTHER" highCardinality="false"/>
+		<DimensionUsage source="DimSemat" name="DimSemat" visible="true" foreignKey="F_SEMAT_ELAMKONANDETAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimMostanadtavalod" name="DimMostanadtavalod" visible="true" foreignKey="F_MOSTANADTAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimChandgholoo" name="DimChandgholoo" visible="true" foreignKey="F_CHANDGHOLOO" highCardinality="false"/>
+		<DimensionUsage source="DimMahal" name="DimMahal" visible="true" foreignKey="F_MAHAL_TAVALOD"/>
+		<DimensionUsage source="DimControlflag" name="DimControlflag" visible="true" foreignKey="CONTROL_FLAG"/>
+		<DimensionUsage source="DimAddrecordstage" name="DimAddrecordstage" visible="true" foreignKey="ADD_RECORD_STAGE"/>
+		<DimensionUsage source="DimAddrecordtype" name="DimAddrecordtype" visible="true" foreignKey="ADD_RECORD_TYPE"/>
+		<DimensionUsage source="DimDin" name="DimDin" visible="true" foreignKey="F_DIN" highCardinality="false"/>
+		<DimensionUsage source="DimModatezdevajTavalod" name="DimModatezdevajTavalod" visible="true" foreignKey="F_MODATEZDEVAJ_TAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeo" visible="true" foreignKey="F_GEO_BIRTH_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimChandgholoo" name="DimChandgholooCounting" visible="true" foreignKey="F_CHANDGHOLOO_COUNTING" highCardinality="false"/>
+		<DimensionUsage source="DimName" name="DimName" visible="true" foreignKey="F_NAME" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenMother" visible="true" foreignKey="F_SEN_MOTHER" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenFather" visible="true" foreignKey="F_SEN_FATHER" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodtavalod" visible="true" foreignKey="F_TARIKH_VORODTAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabttavalod" visible="true" foreignKey="F_TARIKH_SABTTAVALOD" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthTavalod" visible="true" foreignKey="F_TARIKH_TAVALOD" highCardinality="false"/>
+
+		<DimensionUsage source="DimChildarrange" name="DimChildarrangeMother" visible="true" foreignKey="F_CHILDARRANGE_MOTHER" highCardinality="false"/>
+		<DimensionUsage source="DimChildarrange" name="DimChildarrangeFather" visible="true" foreignKey="F_CHILDARRANGE_FATHER" highCardinality="false"/>
+		<DimensionUsage source="DimFaselesaal" name="DimFaselesaal" visible="true" foreignKey="F_FASELESAAL" highCardinality="false"/>
+
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniFather" visible="true" foreignKey="F_GROHSENI_FATHER" highCardinality="false"/>
+
+		<Measure name="tedadtavalodAll" column="CODEMELLI" formatString="#,#" aggregator="distinct-count" visible="true"/>
+		<Measure name="agedaymother" column="AGEDAY_MOTHER" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="agedayfather" column="AGEDAY_FATHER" formatString="#,#" aggregator="sum" visible="true"/>
+		<CalculatedMember name="tedadtavalod" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.tedadtavalodAll-(Measures.tedadtavalodAll,DimControlflag.[5])]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeo" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeo].[All])-([DimGeo].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</Cube>
+	<Cube name="Fot" visible="true" cache="true" enabled="true">
+		<View alias="FACT_FOT_filtered">
+			<SQL dialect="generic">
+				<![CDATA[
+				select f.*,case g.f_noemahal when 1 then g.id else g.f_bakhsh end as f_geo_death_shahrbakhsh
+				 ,case when SEN_SAAL is null then -1 when SEN_SAAL>=100 then 100 else SEN_SAAL end F_SENFOT
+				from FACT_FOT f left join DIM_GEO g on g.id=f.F_GEO_DEATH
+				]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimJensiat" name="DimJensiat" visible="true" foreignKey="F_JENSIAT" highCardinality="false"/>
+		<DimensionUsage source="DimJarimoavaghe" name="DimJarimoavaghe" visible="true" foreignKey="F_JARIMOAVAGHE_FOT" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodfot" visible="true" foreignKey="F_TARIKH_VORODFOT" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE" highCardinality="false"/>
+		<DimensionUsage source="DimTakhirsabt" name="DimTakhirsabt" visible="true" foreignKey="F_TAKHIRSABT_FOT" highCardinality="false"/>
+		<DimensionUsage source="DimGrohsenifot" name="DimGrohsenifot" visible="true" foreignKey="F_GROHSENI_FOT" highCardinality="false"/>
+		<DimensionUsage source="DimElatefot" name="DimElatefot" visible="true" foreignKey="F_ELATEFOT" highCardinality="false"/>
+		<DimensionUsage source="DimMostanadfot" name="DimMostanadfot" visible="true" foreignKey="F_MOSTANADFOT" highCardinality="false"/>
+		<DimensionUsage source="DimFotraked" name="DimFotraked" visible="true" foreignKey="F_FOTRAKED" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimDeathReason" name="DimDeathReason" visible="true" foreignKey="F_DEATH_REASON" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeo" visible="true" foreignKey="F_GEO_DEATH_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimStillBirth" name="DimStillBirth" visible="true" foreignKey="F_STILLBIRTH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabtfot" visible="true" foreignKey="F_TARIKH_SABTFOT" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhFot" visible="true" foreignKey="F_TARIKH_FOT" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodfot" visible="true" foreignKey="F_TARIKH_VORODFOT" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabtfot" visible="true" foreignKey="F_TARIKH_SABTFOT" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthFot" visible="true" foreignKey="F_TARIKH_FOT" highCardinality="false"/>
+
+		<DimensionUsage source="DimIs" name="DimIsUnder1year" visible="true" foreignKey="F_IS_UNDER1YEAR" highCardinality="false"/>
+		<DimensionUsage source="DimUnder1year" name="DimUnder1year" visible="true" foreignKey="F_UNDER1YEAR" highCardinality="false"/>
+		<DimensionUsage source="DimIs" name="DimIsUnder5year" visible="true" foreignKey="F_IS_UNDER5YEAR" highCardinality="false"/>
+		<DimensionUsage source="DimUnder5year" name="DimUnder5year" visible="true" foreignKey="F_UNDER5YEAR" highCardinality="false"/>
+
+		<DimensionUsage source="DimSenfot" name="DimSenfot" visible="true" foreignKey="F_SENFOT" highCardinality="false"/>
+
+
+		<Measure name="tedadfotAll" column="ID" formatString="#,#" aggregator="count" visible="true"/>
+		<Measure name="senroozAll" column="SEN_ROOZ" formatString="#,#.00" aggregator="sum" visible="true"/>
+		<Measure name="sensaalAll" column="SEN_SAAL" formatString="#,#.00" aggregator="sum" visible="true"/>
+
+		<Measure name="medianSensaalAll" caption="Median Sen Saal" dataType="Numeric" aggregator="None" visible="true" formatString="#,#.0" >
+			<MeasureExpression>
+				<SQL dialect="generic"> median(sen_saal)</SQL>
+			</MeasureExpression>
+		</Measure>
+
+		<CalculatedMember name="tedadfot" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.tedadfotAll-(Measures.tedadfotAll,DimStillBirth.[2])]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="senrooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.senroozAll-(Measures.senroozAll,DimStillBirth.[2])]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="sensaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.sensaalAll-(Measures.sensaalAll,DimStillBirth.[2])]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="tedadfotStillbirth" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[(Measures.tedadfotAll,DimStillBirth.[2])]]>
+			</Formula>
+		</CalculatedMember>
+
+		<CalculatedMember name="medianSensaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[(Measures.medianSensaalAll,DimStillBirth.[1])]]>
+			</Formula>
+		</CalculatedMember>
+
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign_Median" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<!--<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>-->
+			<Formula>Median(except([DimEdare].[All],[DimEdare].[ostan].[1031]))</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</Cube>
+	<Cube name="Ezdevaj" visible="true" cache="true" enabled="true">
+		<View alias="FACT_EZDEVAJ_filtered">
+			<SQL dialect="generic">
+				<![CDATA[	select f.* ,case gm.f_noemahal when 1 then gm.id else gm.f_bakhsh end as F_GEO_MARRIAGE_shahrbakhsh ,case gh.f_noemahal when 1 then gh.id else gh.f_bakhsh end as F_GEO_HUSBAND_shahrbakhsh ,case gw.f_noemahal when 1 then gw.id else gw.f_bakhsh end as F_GEO_WIFE_shahrbakhsh	from FACT_EZDEVAJ f	left join DIM_GEO gm on gm.id=f.F_GEO_MARRIAGE	left join DIM_GEO gh on gh.id=f.F_GEO_HUSBAND	left join DIM_GEO gw on gw.id=f.F_GEO_WIFE	where f.F_MARRIAGE_NATIONALITY_TYPE=1 	]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniEzdevajzoje" visible="true" foreignKey="F_GROHSENI_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniEzdevajzoj" visible="true" foreignKey="F_GROHSENI_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinEzdevajzoje" visible="true" foreignKey="F_DIN_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinEzdevajzoj" visible="true" foreignKey="F_DIN_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenEzdevajzoje" visible="true" foreignKey="F_SEN_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenEzdevajzoj" visible="true" foreignKey="F_SEN_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlEzdevajzoje" visible="true" foreignKey="F_SHOGHL_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlEzdevajzoj" visible="true" foreignKey="F_SHOGHL_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatEzdevajzoj" visible="true" foreignKey="F_TAHSILAT_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatEzdevajzoje" visible="true" foreignKey="F_TAHSILAT_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTedadezdevaj" name="DimTedadezdevajzoje" visible="true" foreignKey="F_TEDADEZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTedadezdevaj" name="DimTedadezdevajzoj" visible="true" foreignKey="F_TEDADEZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimEkhtelafsen" name="DimEkhtelafsen" visible="true" foreignKey="F_EKHTELAFSEN_EZDEVAJZOJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimFaselezamani" name="DimFaselezamani" visible="true" foreignKey="F_FASELEZAMANI_EZDEVAJ_SABT" highCardinality="false"/>
+		<DimensionUsage source="DimMahal" name="DimMahal" visible="true" foreignKey="F_MAHAL_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimCodeactiveflag" name="DimCodeactiveflag" visible="true" foreignKey="CODE_ACTIVE_FLAG" highCardinality="false"/>
+		<DimensionUsage source="DimInactivemarriagereason" name="DimInactivemarriagereason" visible="true" foreignKey="INACTIVE_MARRIAGE_REASON_CODE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodezdevaj" visible="true" foreignKey="F_TARIKH_VORODEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhEzdevaj" visible="true" foreignKey="F_TARIKH_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabtezdevaj" visible="true" foreignKey="F_TARIKH_SABTEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageNationalityType" name="DimMarriageNationalityType" visible="true" foreignKey="F_MARRIAGE_NATIONALITY_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageType" name="DimMarriageType" visible="true" foreignKey="F_MARRIAGE_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageConfirmAut" name="DimMarriageConfirmAut" visible="true" foreignKey="F_MARRIAGE_CONFIRM_AUT" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoMarriage" visible="true" foreignKey="F_GEO_MARRIAGE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoHusband" visible="true" foreignKey="F_GEO_HUSBAND_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoWife" visible="true" foreignKey="F_GEO_WIFE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaHusband" visible="true" foreignKey="F_SHAHRROSTA_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaWife" visible="true" foreignKey="F_SHAHRROSTA_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodezdevaj" visible="true" foreignKey="F_TARIKH_VORODEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabtezdevaj" visible="true" foreignKey="F_TARIKH_SABTEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthEzdevaj" visible="true" foreignKey="F_TARIKH_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimNotary" name="DimNotary" visible="true" foreignKey="F_NOTARY" highCardinality="false"/>
+		<Measure name="EzdevajCountAll" column="ID" formatString="#,#" aggregator="count" visible="true"/>
+		<Measure name="SenezdevajzojAll" column="SENEZDEVAJZOJ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="SenezdevajzojeAll" column="SENEZDEVAJZOJE" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenEzdevajSaalAll" column="EKHTELAFSEN_EZDEVAJ_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenEzdevajRoozAll" column="EKHTELAFSEN_EZDEVAJ_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+
+		<Measure name="medianSenezdevajzojAll" caption="Median SenEzdevajzoj" dataType="Numeric" aggregator="None" visible="true" formatString="#,#" >
+			<MeasureExpression>
+				<SQL dialect="generic"> median(F_SEN_EZDEVAJZOJ)</SQL>
+			</MeasureExpression>
+		</Measure>
+		<Measure name="medianSenezdevajzojeAll" caption="Median SenEzdevajzoje" dataType="Numeric" aggregator="None" visible="true" formatString="#,#" >
+			<MeasureExpression>
+				<SQL dialect="generic"> median(F_SEN_EZDEVAJZOJE)</SQL>
+			</MeasureExpression>
+		</Measure>
+
+
+		<CalculatedMember name="EzdevajCount" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EzdevajCountAll-(Measures.EzdevajCountAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Senezdevajzoj" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SenezdevajzojAll-(Measures.SenezdevajzojAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Senezdevajzoje" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SenezdevajzojeAll-(Measures.SenezdevajzojeAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenEzdevajSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenEzdevajSaalAll-(Measures.EkhtelafsenEzdevajSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenEzdevajRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenEzdevajRoozAll-(Measures.EkhtelafsenEzdevajRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoMarriage" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoMarriage].[All])-([DimGeoMarriage].[ostan].[-2])-([DimGeoMarriage].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoHusband" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoHusband].[All])-([DimGeoHusband].[ostan].[-2])-([DimGeoHusband].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoWife" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoWife].[All])-([DimGeoWife].[ostan].[-2])-([DimGeoWife].[ostan].[1031])</Formula>
+		</CalculatedMember>
+
+
+		<CalculatedMember name="All_No_Foreign_Median" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<Formula>Median(except([DimEdare].[All],[DimEdare].[ostan].[1031]))</Formula>
+		</CalculatedMember>
+
+	</Cube>
+	<Cube name="Talagh" visible="true" cache="true" enabled="true">
+		<View alias="FACT_TALAGH_filtered">
+			<SQL dialect="generic">
+				<![CDATA[	select f.* ,case gm.f_noemahal when 1 then gm.id else gm.f_bakhsh end as F_GEO_DIVORCE_shahrbakhsh ,case gh.f_noemahal when 1 then gh.id else gh.f_bakhsh end as F_GEO_HUSBAND_shahrbakhsh ,case gw.f_noemahal when 1 then gw.id else gw.f_bakhsh end as F_GEO_WIFE_shahrbakhsh	from FACT_TALAGH f	left join DIM_GEO gm on gm.id=f.F_GEO_DIVORCE	left join DIM_GEO gh on gh.id=f.F_GEO_HUSBAND	left join DIM_GEO gw on gw.id=f.F_GEO_WIFE	where f.F_MARRIAGE_NATIONALITY_TYPE=1 	]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimSen" name="DimSenTalaghzoje" visible="true" foreignKey="F_SEN_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatTalaghzoj" visible="true" foreignKey="F_TAHSILAT_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlTalaghzoje" visible="true" foreignKey="F_SHOGHL_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinTalaghzoj" visible="true" foreignKey="F_DIN_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniTalaghzoje" visible="true" foreignKey="F_GROHSENI_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinTalaghzoje" visible="true" foreignKey="F_DIN_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatTalaghzoje" visible="true" foreignKey="F_TAHSILAT_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlTalaghzoj" visible="true" foreignKey="F_SHOGHL_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniTalaghzoj" visible="true" foreignKey="F_GROHSENI_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenTalaghzoj" visible="true" foreignKey="F_SEN_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimEkhtelafsen" name="DimEkhtelafsen" visible="true" foreignKey="F_EKHTELAFSEN_TALAGHZOJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimMahal" name="DimMahal" visible="true" foreignKey="F_MAHAL_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimModatezdevaj" name="DimModatezdevaj" visible="true" foreignKey="F_MODATEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimFaselezamani" name="DimFaselezamani" visible="true" foreignKey="F_FASELEZAMANI_TALAGH_SABT" highCardinality="false"/>
+		<DimensionUsage source="DimCodeactiveflag" name="DimCodeactiveflag" visible="true" foreignKey="CODE_ACTIVE_FLAG" highCardinality="false"/>
+		<DimensionUsage source="DimInactivedivorcereason" name="DimInactivedivorcereason" visible="true" foreignKey="INACTIVE_DIVORCE_REASON_CODE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodtalagh" visible="true" foreignKey="F_TARIKH_VORODTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhTalagh" visible="true" foreignKey="F_TARIKH_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabttalagh" visible="true" foreignKey="F_TARIKH_SABTTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageNationalityType" name="DimMarriageNationalityType" visible="true" foreignKey="F_MARRIAGE_NATIONALITY_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoDivorce" visible="true" foreignKey="F_GEO_DIVORCE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoHusband" visible="true" foreignKey="F_GEO_HUSBAND_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoWife" visible="true" foreignKey="F_GEO_WIFE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceConfirmAut" name="DimDivorceConfirmAut" visible="true" foreignKey="F_DIVORCE_CONFIRM_AUT" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaHusband" visible="true" foreignKey="F_SHAHRROSTA_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaWife" visible="true" foreignKey="F_SHAHRROSTA_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceTimes" name="DimDivorceTimesHusband" visible="true" foreignKey="F_DIVORCE_TIMES_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceTimes" name="DimDivorceTimesWife" visible="true" foreignKey="F_DIVORCE_TIMES_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodtalagh" visible="true" foreignKey="F_TARIKH_VORODTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabttalagh" visible="true" foreignKey="F_TARIKH_SABTTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthTalagh" visible="true" foreignKey="F_TARIKH_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimNotary" name="DimNotary" visible="true" foreignKey="F_NOTARY" highCardinality="false"/>
+		<Measure name="TalaghCountAll" column="ID" formatString="#,#" aggregator="count" visible="true"/>
+		<Measure name="SentalaghzojAll" column="SENTALAGHZOJ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="SentalaghzojeAll" column="SENTALAGHZOJE" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenTalaghSaalAll" column="EKHTELAFSEN_TALAGH_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenTalaghRoozAll" column="EKHTELAFSEN_TALAGH_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="ModatezdevajSaalAll" column="MODATEZDEVAJ_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="ModatezdevajRoozAll" column="MODATEZDEVAJ_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+
+		<Measure name="medianSentalaghzojAll" caption="Median Sentalaghzoj" dataType="Numeric" aggregator="None" visible="true" formatString="#,#" >
+			<MeasureExpression>
+				<SQL dialect="generic"> median(F_SEN_TALAGHZOJ)</SQL>
+			</MeasureExpression>
+		</Measure>
+		<Measure name="medianSentalaghzojeAll" caption="Median Sentalaghzoje" dataType="Numeric" aggregator="None" visible="true" formatString="#,#" >
+			<MeasureExpression>
+				<SQL dialect="generic"> median(F_SEN_TALAGHZOJE)</SQL>
+			</MeasureExpression>
+		</Measure>
+
+		<CalculatedMember name="TalaghCount" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.TalaghCountAll-([DimFaselezamani].[7],Measures.TalaghCountAll) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Sentalaghzoj" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SentalaghzojAll-([DimFaselezamani].[7],Measures.SentalaghzojAll) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Sentalaghzoje" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SentalaghzojeAll-([DimFaselezamani].[7],Measures.SentalaghzojeAll )]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenTalaghSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenTalaghSaalAll-(Measures.EkhtelafsenTalaghSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenTalaghRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenTalaghRoozAll-(Measures.EkhtelafsenTalaghRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="ModatezdevajSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.ModatezdevajSaalAll-(Measures.ModatezdevajSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="ModatezdevajRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.ModatezdevajRoozAll-(Measures.ModatezdevajRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoDivorce" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoDivorce].[All])-([DimGeoDivorce].[ostan].[-2])-([DimGeoDivorce].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoHusband" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoHusband].[All])-([DimGeoHusband].[ostan].[-2])-([DimGeoHusband].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimGeoWife" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimGeoWife].[All])-([DimGeoWife].[ostan].[-2])-([DimGeoWife].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</Cube>
+	<Cube name="EzdevajYekIrani" visible="true" cache="true" enabled="true">
+		<View alias="FACT_EZDEVAJ_filtered">
+			<SQL dialect="generic">
+				<![CDATA[ select f.* ,case gm.f_noemahal when 1 then gm.id else gm.f_bakhsh end as F_GEO_MARRIAGE_shahrbakhsh ,case gh.f_noemahal when 1 then gh.id else gh.f_bakhsh end as F_GEO_HUSBAND_shahrbakhsh ,case gw.f_noemahal when 1 then gw.id else gw.f_bakhsh end as F_GEO_WIFE_shahrbakhsh from FACT_EZDEVAJ f left join DIM_GEO gm on gm.id=f.F_GEO_MARRIAGE left join DIM_GEO gh on gh.id=f.F_GEO_HUSBAND left join DIM_GEO gw on gw.id=f.F_GEO_WIFE	]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniEzdevajzoje" visible="true" foreignKey="F_GROHSENI_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniEzdevajzoj" visible="true" foreignKey="F_GROHSENI_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinEzdevajzoje" visible="true" foreignKey="F_DIN_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinEzdevajzoj" visible="true" foreignKey="F_DIN_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenEzdevajzoje" visible="true" foreignKey="F_SEN_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenEzdevajzoj" visible="true" foreignKey="F_SEN_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlEzdevajzoje" visible="true" foreignKey="F_SHOGHL_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlEzdevajzoj" visible="true" foreignKey="F_SHOGHL_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatEzdevajzoj" visible="true" foreignKey="F_TAHSILAT_EZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatEzdevajzoje" visible="true" foreignKey="F_TAHSILAT_EZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTedadezdevaj" name="DimTedadezdevajzoje" visible="true" foreignKey="F_TEDADEZDEVAJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTedadezdevaj" name="DimTedadezdevajzoj" visible="true" foreignKey="F_TEDADEZDEVAJZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimEkhtelafsen" name="DimEkhtelafsen" visible="true" foreignKey="F_EKHTELAFSEN_EZDEVAJZOJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimFaselezamani" name="DimFaselezamani" visible="true" foreignKey="F_FASELEZAMANI_EZDEVAJ_SABT" highCardinality="false"/>
+		<DimensionUsage source="DimMahal" name="DimMahal" visible="true" foreignKey="F_MAHAL_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimCodeactiveflag" name="DimCodeactiveflag" visible="true" foreignKey="CODE_ACTIVE_FLAG" highCardinality="false"/>
+		<DimensionUsage source="DimInactivemarriagereason" name="DimInactivemarriagereason" visible="true" foreignKey="INACTIVE_MARRIAGE_REASON_CODE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodezdevaj" visible="true" foreignKey="F_TARIKH_VORODEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhEzdevaj" visible="true" foreignKey="F_TARIKH_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabtezdevaj" visible="true" foreignKey="F_TARIKH_SABTEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageNationalityType" name="DimMarriageNationalityType" visible="true" foreignKey="F_MARRIAGE_NATIONALITY_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageType" name="DimMarriageType" visible="true" foreignKey="F_MARRIAGE_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageConfirmAut" name="DimMarriageConfirmAut" visible="true" foreignKey="F_MARRIAGE_CONFIRM_AUT" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoMarriage" visible="true" foreignKey="F_GEO_MARRIAGE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoHusband" visible="true" foreignKey="F_GEO_HUSBAND_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoWife" visible="true" foreignKey="F_GEO_WIFE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaHusband" visible="true" foreignKey="F_SHAHRROSTA_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaWife" visible="true" foreignKey="F_SHAHRROSTA_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodezdevaj" visible="true" foreignKey="F_TARIKH_VORODEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabtezdevaj" visible="true" foreignKey="F_TARIKH_SABTEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthEzdevaj" visible="true" foreignKey="F_TARIKH_EZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimNotary" name="DimNotary" visible="true" foreignKey="F_NOTARY" highCardinality="false"/>
+		<Measure name="EzdevajCountAll" column="ID" formatString="#,#" aggregator="count" visible="true"/>
+		<Measure name="SenezdevajzojAll" column="SENEZDEVAJZOJ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="SenezdevajzojeAll" column="SENEZDEVAJZOJE" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenEzdevajSaalAll" column="EKHTELAFSEN_EZDEVAJ_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenEzdevajRoozAll" column="EKHTELAFSEN_EZDEVAJ_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+		<CalculatedMember name="EzdevajCount" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EzdevajCountAll-(Measures.EzdevajCountAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Senezdevajzoj" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SenezdevajzojAll-(Measures.SenezdevajzojAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Senezdevajzoje" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SenezdevajzojeAll-(Measures.SenezdevajzojeAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenEzdevajSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenEzdevajSaalAll-(Measures.EkhtelafsenEzdevajSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenEzdevajRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenEzdevajRoozAll-(Measures.EkhtelafsenEzdevajRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</Cube>
+	<Cube name="TalaghYekIrani" visible="true" cache="true" enabled="true">
+		<View alias="FACT_TALAGH_filtered">
+			<SQL dialect="generic">
+				<![CDATA[ select f.* ,case gm.f_noemahal when 1 then gm.id else gm.f_bakhsh end as F_GEO_DIVORCE_shahrbakhsh ,case gh.f_noemahal when 1 then gh.id else gh.f_bakhsh end as F_GEO_HUSBAND_shahrbakhsh ,case gw.f_noemahal when 1 then gw.id else gw.f_bakhsh end as F_GEO_WIFE_shahrbakhsh from FACT_TALAGH f left join DIM_GEO gm on gm.id=f.F_GEO_DIVORCE left join DIM_GEO gh on gh.id=f.F_GEO_HUSBAND left join DIM_GEO gw on gw.id=f.F_GEO_WIFE	]]>
+			</SQL>
+		</View>
+		<DimensionUsage source="DimSen" name="DimSenTalaghzoje" visible="true" foreignKey="F_SEN_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatTalaghzoj" visible="true" foreignKey="F_TAHSILAT_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlTalaghzoje" visible="true" foreignKey="F_SHOGHL_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinTalaghzoj" visible="true" foreignKey="F_DIN_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniTalaghzoje" visible="true" foreignKey="F_GROHSENI_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimDin" name="DimDinTalaghzoje" visible="true" foreignKey="F_DIN_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimTahsilat" name="DimTahsilatTalaghzoje" visible="true" foreignKey="F_TAHSILAT_TALAGHZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimShoghl" name="DimShoghlTalaghzoj" visible="true" foreignKey="F_SHOGHL_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhTalagh" visible="true" foreignKey="F_TARIKH_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimGrohseni" name="DimGrohseniTalaghzoj" visible="true" foreignKey="F_GROHSENI_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimSen" name="DimSenTalaghzoj" visible="true" foreignKey="F_SEN_TALAGHZOJ" highCardinality="false"/>
+		<DimensionUsage source="DimEdare" name="DimEdare" visible="true" foreignKey="F_EDARE_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimEkhtelafsen" name="DimEkhtelafsen" visible="true" foreignKey="F_EKHTELAFSEN_TALAGHZOJZOJE" highCardinality="false"/>
+		<DimensionUsage source="DimMahal" name="DimMahal" visible="true" foreignKey="F_MAHAL_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimModatezdevaj" name="DimModatezdevaj" visible="true" foreignKey="F_MODATEZDEVAJ" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrosta" visible="true" foreignKey="F_SHAHRROSTA_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimFaselezamani" name="DimFaselezamani" visible="true" foreignKey="F_FASELEZAMANI_TALAGH_SABT" highCardinality="false"/>
+		<DimensionUsage source="DimCodeactiveflag" name="DimCodeactiveflag" visible="true" foreignKey="CODE_ACTIVE_FLAG" highCardinality="false"/>
+		<DimensionUsage source="DimInactivedivorcereason" name="DimInactivedivorcereason" visible="true" foreignKey="INACTIVE_DIVORCE_REASON_CODE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhVorodtalagh" visible="true" foreignKey="F_TARIKH_VORODTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhTalagh" visible="true" foreignKey="F_TARIKH_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikh" name="DimTarikhSabttalagh" visible="true" foreignKey="F_TARIKH_SABTTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimEdareKhareji" name="DimEdareKhareji" visible="true" foreignKey="F_EDARE_KHAREJI" highCardinality="false"/>
+		<DimensionUsage source="DimMarriageNationalityType" name="DimMarriageNationalityType" visible="true" foreignKey="F_MARRIAGE_NATIONALITY_TYPE" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoDivorce" visible="true" foreignKey="F_GEO_DIVORCE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoHusband" visible="true" foreignKey="F_GEO_HUSBAND_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimGeoShahrBakhsh" name="DimGeoWife" visible="true" foreignKey="F_GEO_WIFE_SHAHRBAKHSH" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceConfirmAut" name="DimDivorceConfirmAut" visible="true" foreignKey="F_DIVORCE_CONFIRM_AUT" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaHusband" visible="true" foreignKey="F_SHAHRROSTA_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimShahrrosta" name="DimShahrrostaWife" visible="true" foreignKey="F_SHAHRROSTA_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceTimes" name="DimDivorceTimesHusband" visible="true" foreignKey="F_DIVORCE_TIMES_HUSBAND" highCardinality="false"/>
+		<DimensionUsage source="DimDivorceTimes" name="DimDivorceTimesWife" visible="true" foreignKey="F_DIVORCE_TIMES_WIFE" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthVorodtalagh" visible="true" foreignKey="F_TARIKH_VORODTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthSabttalagh" visible="true" foreignKey="F_TARIKH_SABTTALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimTarikhMonth" name="DimTarikhMonthTalagh" visible="true" foreignKey="F_TARIKH_TALAGH" highCardinality="false"/>
+		<DimensionUsage source="DimNotary" name="DimNotary" visible="true" foreignKey="F_NOTARY" highCardinality="false"/>
+		<Measure name="TalaghCountAll" column="ID" formatString="#,#" aggregator="count" visible="true"/>
+		<Measure name="SentalaghzojAll" column="SENTALAGHZOJ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="SentalaghzojeAll" column="SENTALAGHZOJE" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenTalaghSaalAll" column="EKHTELAFSEN_TALAGH_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="EkhtelafsenTalaghRoozAll" column="EKHTELAFSEN_TALAGH_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="ModatezdevajSaalAll" column="MODATEZDEVAJ_SAAL" formatString="#,#" aggregator="sum" visible="true"/>
+		<Measure name="ModatezdevajRoozAll" column="MODATEZDEVAJ_ROOZ" formatString="#,#" aggregator="sum" visible="true"/>
+		<CalculatedMember name="TalaghCount" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.TalaghCountAll-([DimFaselezamani].[7],Measures.TalaghCountAll) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Sentalaghzoj" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SentalaghzojAll-([DimFaselezamani].[7],Measures.SentalaghzojAll) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="Sentalaghzoje" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.SentalaghzojeAll-([DimFaselezamani].[7],Measures.SentalaghzojeAll )]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenTalaghSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenTalaghSaalAll-(Measures.EkhtelafsenTalaghSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="EkhtelafsenTalaghRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.EkhtelafsenTalaghRoozAll-(Measures.EkhtelafsenTalaghRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="ModatezdevajSaal" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.ModatezdevajSaalAll-(Measures.ModatezdevajSaalAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="ModatezdevajRooz" dimension="Measures" visible="true">
+			<Formula>
+				<![CDATA[Measures.ModatezdevajRoozAll-(Measures.ModatezdevajRoozAll,[DimFaselezamani].[7]) ]]>
+			</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</Cube>
+	<VirtualCube enabled="true" name="EzdevajTalagh" visible="true">
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimShahrrosta"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEdareKhareji"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEdare"/>
+		<VirtualCubeDimension cubeName="Ezdevaj" visible="true" highCardinality="false" name="DimTarikhVorodezdevaj"/>
+		<VirtualCubeDimension cubeName="Talagh" visible="true" highCardinality="false" name="DimTarikhVorodtalagh"/>
+		<VirtualCubeDimension cubeName="Ezdevaj" visible="true" highCardinality="false" name="DimTarikhSabtezdevaj"/>
+		<VirtualCubeDimension cubeName="Talagh" visible="true" highCardinality="false" name="DimTarikhSabttalagh"/>
+		<VirtualCubeDimension cubeName="Ezdevaj" visible="true" highCardinality="false" name="DimTarikhEzdevaj"/>
+		<VirtualCubeDimension cubeName="Talagh" visible="true" highCardinality="false" name="DimTarikhTalagh"/>
+		<VirtualCubeDimension cubeName="Ezdevaj" visible="true" highCardinality="false" name="DimTahsilatEzdevajzoj"/>
+		<VirtualCubeDimension cubeName="Ezdevaj" visible="true" highCardinality="false" name="DimTahsilatEzdevajzoje"/>
+		<VirtualCubeDimension cubeName="Talagh" visible="true" highCardinality="false" name="DimTahsilatTalaghzoj"/>
+		<VirtualCubeDimension cubeName="Talagh" visible="true" highCardinality="false" name="DimTahsilatTalaghzoje"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEkhtelafsen"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimFaselezamani"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimCodeactiveflag"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimInactivemarriagereason"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimInactivedivorcereason"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimMarriageNationalityType"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimNotary"/>
+		<VirtualCubeMeasure cubeName="Ezdevaj" name="[Measures].[EzdevajCountAll]" visible="true"/>
+		<VirtualCubeMeasure cubeName="Talagh" name="[Measures].[TalaghCountAll]" visible="true"/>
+		<VirtualCubeMeasure cubeName="Ezdevaj" name="[Measures].[EzdevajCount]" visible="true"/>
+		<VirtualCubeMeasure cubeName="Talagh" name="[Measures].[TalaghCount]" visible="true"/>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</VirtualCube>
+	<VirtualCube enabled="true" name="EzdevajTalaghYekIrani" visible="true">
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimShahrrosta"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEdareKhareji"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEdare"/>
+		<VirtualCubeDimension cubeName="EzdevajYekIrani" visible="true" highCardinality="false" name="DimTarikhVorodezdevaj"/>
+		<VirtualCubeDimension cubeName="TalaghYekIrani" visible="true" highCardinality="false" name="DimTarikhVorodtalagh"/>
+		<VirtualCubeDimension cubeName="EzdevajYekIrani" visible="true" highCardinality="false" name="DimTarikhSabtezdevaj"/>
+		<VirtualCubeDimension cubeName="TalaghYekIrani" visible="true" highCardinality="false" name="DimTarikhSabttalagh"/>
+		<VirtualCubeDimension cubeName="EzdevajYekIrani" visible="true" highCardinality="false" name="DimTarikhEzdevaj"/>
+		<VirtualCubeDimension cubeName="TalaghYekIrani" visible="true" highCardinality="false" name="DimTarikhTalagh"/>
+		<VirtualCubeDimension cubeName="EzdevajYekIrani" visible="true" highCardinality="false" name="DimTahsilatEzdevajzoj"/>
+		<VirtualCubeDimension cubeName="EzdevajYekIrani" visible="true" highCardinality="false" name="DimTahsilatEzdevajzoje"/>
+		<VirtualCubeDimension cubeName="TalaghYekIrani" visible="true" highCardinality="false" name="DimTahsilatTalaghzoj"/>
+		<VirtualCubeDimension cubeName="TalaghYekIrani" visible="true" highCardinality="false" name="DimTahsilatTalaghzoje"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimEkhtelafsen"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimFaselezamani"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimCodeactiveflag"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimInactivemarriagereason"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimInactivedivorcereason"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimMarriageNationalityType"/>
+		<VirtualCubeDimension visible="true" highCardinality="false" name="DimNotary"/>
+		<VirtualCubeMeasure cubeName="EzdevajYekIrani" name="[Measures].[EzdevajCountAll]" visible="true"/>
+		<VirtualCubeMeasure cubeName="TalaghYekIrani" name="[Measures].[TalaghCountAll]" visible="true"/>
+		<VirtualCubeMeasure cubeName="EzdevajYekIrani" name="[Measures].[EzdevajCount]" visible="true"/>
+		<VirtualCubeMeasure cubeName="TalaghYekIrani" name="[Measures].[TalaghCount]" visible="true"/>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdare" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdare].[All])-([DimEdare].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimEdareKhareji" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimEdareKhareji].[All])-([DimEdareKhareji].[ostan].[1031])</Formula>
+		</CalculatedMember>
+		<CalculatedMember name="All_No_Foreign" dimension="DimNotary" visible="true" caption="&#1580;&#1605;&#1593;">
+			<!-- جمع -->
+			<Formula>([DimNotary].[All])-([DimNotary].[ostan].[-2])-([DimNotary].[ostan].[1031])</Formula>
+		</CalculatedMember>
+	</VirtualCube>
+	<NamedSet name="filteredEdare">
+		<Formula>
+			<![CDATA[{}]]>
+		</Formula>
+	</NamedSet>
+	<NamedSet name="filteredEdareKhareji">
+		<Formula>
+			<![CDATA[{}]]>
+		</Formula>
+	</NamedSet>
+	<NamedSet name="foreignEdareSet">
+		<Formula>
+			<![CDATA[{DESCENDANTS([DimEdare].[ostan].[1031],0,SELF_AND_AFTER)}]]>
+		</Formula>
+	</NamedSet>
+	<NamedSet name="foreignNotarySet">
+		<Formula>
+			<![CDATA[{{DESCENDANTS([DimNotary].[ostan].[-2],0,SELF_AND_AFTER)},{DESCENDANTS([DimNotary].[ostan].[1031],0,SELF_AND_AFTER)}}]]>
+		</Formula>
+	</NamedSet>
+</Schema>

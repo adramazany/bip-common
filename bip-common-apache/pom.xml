@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bip-common</artifactId>
+        <groupId>bip.common</groupId>
+        <version>2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bip-common-apache</artifactId>
+
+    <dependencies>
+
+        <!--************************************ Apache Commons ************************************ -->
+        <!-- Apache Commons Lang, a package of Java utility classes for the classes
+            that are in java.lang's hierarchy, or are considered to be so standard as
+            to justify existence in java.lang. -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- Types that extend and augment the Java Collections Framework. -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <!-- The Apache Commons Codec package contains simple encoder and decoders
+            for various formats such as Base64 and Hexadecimal. In addition to these
+            widely used encoders and decoders, the codec package also maintains a collection
+            of phonetic encoding utilities. -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <!-- Commons Lang, a package of Java utility classes for the classes that
+            are in java.lang's hierarchy, or are considered to be so standard as to justify
+            existence in java.lang. -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <!-- The Math project is a library of lightweight, self-contained mathematics
+            and statistics components addressing the most common practical problems not
+            immediately available in the Java programming language or commons-lang. -->
+        <dependency>
+            <groupId>commons-math</groupId>
+            <artifactId>commons-math</artifactId>
+        </dependency>
+        <!-- Commons Vfs -->
+        <dependency>
+            <groupId>commons-vfs</groupId>
+            <artifactId>commons-vfs</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
+
+        <!-- for parsing docx, pdf, ... attachments of emails and get pior text for searching purpose -->
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

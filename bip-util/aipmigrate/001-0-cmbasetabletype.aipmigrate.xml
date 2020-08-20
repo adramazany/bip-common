@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><table checkExist="true" checkExistQuery="select id from cmbasetabletype where id=:id" destSQL="insert into cmbasetabletype (  ID,Caption,SubSystem,IsReadOnly,EnglishCaption,oldID,oldID_Majles)values (:ID ,':Caption' ,':SubSystem' ,:IsReadOnly ,':EnglishCaption' ,:oldID ,:oldID_Majles )" destdbtype="1" existSQL="update  cmbasetabletype set  ID=:ID ,Caption=':Caption' ,SubSystem=':SubSystem' ,IsReadOnly=:IsReadOnly ,EnglishCaption=':EnglishCaption' 
+,oldID=:oldID ,oldID_Majles=:oldID_Majles  where id=:id" existSQLEnable="false" hasLOB="false" srcQuery="select * from cmbasetabletype" tablename="cmbasetabletype"
+beforeMigrateExecOnSrc=""
+beforeMigrateExecOnDest=""
+><column column_dest=":ID" column_src="ID"/><column column_dest=":Caption" column_src="Caption"/><column column_dest=":SubSystem" column_src="SubSystem"/><column column_dest=":IsReadOnly" column_src="IsReadOnly"/><column column_dest=":EnglishCaption" column_src="EnglishCaption"/><column column_dest=":oldID" column_src="oldID"/><column column_dest=":oldID_Majles" column_src="oldID_Majles"/></table>

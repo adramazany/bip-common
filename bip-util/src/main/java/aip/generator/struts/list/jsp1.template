@@ -1,0 +1,63 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="aip.util.NVL"%>
+<%@page import="@packagepath@.@name@LST" %>
+<%@page import="@packagepath@.@name@LSTParam"%>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic"%>
+<%@ taglib uri="/WEB-INF/AIPTag.tld" prefix="aip"%>
+<head>
+	<title>@title@</title>
+</head>
+<body id="baseBody" dir="rtl" >
+	<jsp:include page="/aip/toolbar/aiptoolbar.jsp"></jsp:include>
+
+	<aip:headerTitle	title="@title@" />
+
+	<aip:message errorMessage="<%= NVL.getString(request.getAttribute("errorMessage")) %>"></aip:message>
+
+	<form action="t_@name_lower@.do" method="POST" class="clsReportForm">
+		<input type="hidden" name="paramAction" value="@name_lower@.do">
+		
+		<html:hidden name="list"  property="requestPage" />
+		<html:hidden name="list"  property="pageSize" />
+		@@params@@
+		<html:hidden name="param" property="@paramname_lower@"/>
+		@@/params@@
+	</form>
+
+	<aip:skin type="ITEM">
+		<logic:notEmpty name="list">
+			<div id="divParamString">
+				<bean:write name="list" property="paramString"/>	
+			</div>
+		</logic:notEmpty>
+		<div id="baseDiv" align="center">
+			<table width="100%" Class="dataList clsVisibleColumns">
+				<tr>
+					<th ></th>
+					@@visiblecolumns@@
+					<th id="@visiblecolumn_lower@">@visiblecolumn_title@</th>
+					@@/visiblecolumns@@
+				</tr>
+				
+				<logic:notEmpty name="list">
+
+				<bean:define id="requestPage" name="list" property="requestPage"></bean:define>
+				<bean:define id="pageSize" name="list" property="pageSize"></bean:define>
+				
+				<logic:iterate id="dto" name="list" property="rows" type="@classfullname@" indexId="index">
+					<% if(dto!=null){ %>
+					<tr class="<%= (index%2==0?"oddRows":"evenRows")  %>">
+						<td class="radif"><%=((NVL.getInt(requestPage)-1)*NVL.getInt(pageSize))+index+1 %></td>
+						@@visiblecolumns@@
+						<td class="@visiblecolumn_lower@"><%=NVL.getString(dto.get@visiblecolumn_capital@()) %></td>
+						@@/visiblecolumns@@
+					</tr>
+					<% }//if(dto!=null) %>
+				</logic:iterate>
+				</logic:notEmpty>
+			</table>
+		</div>
+	</aip:skin>
+</body>

@@ -1,0 +1,25 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<head>
+</head>
+<div class="clsReportParam">
+<table width="100%">
+	@@paramcombos@@
+	<tr> <td class="viewTitles" colspan="1" >@paramname_title@:</td>
+		<td><html:select name="param" property="@paramname_lower@">
+				<option></option>
+				<html:optionsCollection name="comboLST" property="@paramcombo_lower@" label="@paramcombo_caption@" value="@paramcombo_value@"/>
+			</html:select>
+		</td>
+	</tr>
+	@@/paramcombos@@
+	@@otherparams@@
+	<tr>
+		<td class="viewTitles">@paramname_title@:</td>
+		<td class="viewData">
+			<html:text name="param" property="@paramname_lower@"></html:text>						
+		</td>
+	</tr>
+	@@/otherparams@@
+</table>
+</div>

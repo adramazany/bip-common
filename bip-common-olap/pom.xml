@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bip-common</artifactId>
+        <groupId>bip.common</groupId>
+        <version>2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bip-common-olap</artifactId>
+    <version>2.1.0</version>
+
+    <dependencies>
+
+
+        <!-- BIP libs -->
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-db</artifactId>
+        </dependency>
+
+        <!-- Olap & mondrian -->
+        <dependency>
+            <groupId>org.olap4j</groupId>
+            <artifactId>olap4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>pentaho</groupId>
+            <artifactId>mondrian</artifactId>
+        </dependency>
+        <!-- The XOM Dual Streaming/Tree API for Processing XML required : mondrian.olap4j.MondrianOlap4jConnection -->
+        <dependency>
+            <groupId>eigenbase</groupId>
+            <artifactId>eigenbase-xom</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eigenbase</groupId>
+            <artifactId>eigenbase-resgen</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>eigenbase</groupId>
+            <artifactId>eigenbase-properties</artifactId>
+        </dependency>
+
+        <!-- POI -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+        </dependency>
+
+        <!-- IText, A Free Java PDF Library -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+        </dependency>
+
+        <!--************************************ Apache Commons ************************************ -->
+        <!-- Apache Commons Lang, a package of Java utility classes for the classes
+            that are in java.lang's hierarchy, or are considered to be so standard as
+            to justify existence in java.lang. -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <!-- Types that extend and augment the Java Collections Framework. -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <!-- The Apache Commons Codec package contains simple encoder and decoders
+            for various formats such as Base64 and Hexadecimal. In addition to these
+            widely used encoders and decoders, the codec package also maintains a collection
+            of phonetic encoding utilities. -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <!-- Commons Lang, a package of Java utility classes for the classes that
+            are in java.lang's hierarchy, or are considered to be so standard as to justify
+            existence in java.lang. -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <!-- The Math project is a library of lightweight, self-contained mathematics
+            and statistics components addressing the most common practical problems not
+            immediately available in the Java programming language or commons-lang. -->
+        <dependency>
+            <groupId>commons-math</groupId>
+            <artifactId>commons-math</artifactId>
+        </dependency>
+        <!-- Commons Vfs -->
+        <dependency>
+            <groupId>commons-vfs</groupId>
+            <artifactId>commons-vfs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
+
+        <!-- database -->
+        <!-- ORACLE database driver -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+        </dependency>
+
+        <!-- Tomcat Database Connection Pooling package  -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+        </dependency>
+
+        <!-- LOG -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

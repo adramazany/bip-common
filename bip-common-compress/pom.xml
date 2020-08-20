@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>bip-common</artifactId>
+        <groupId>bip.common</groupId>
+        <version>2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>bip-common-compress</artifactId>
+    <version>2.2.2</version>
+
+    <description>
+        version 2.2.2-980502
+        --------------------
+        issue 1-compress file's RandomAccessFile is not closed after extraction!
+
+        version 2.2.1-980413
+        --------------------
+        issue 1-adding maven shade plugin for creating full executable jar
+
+        version 2.2.0-980315
+        --------------------
+        feature 1-add ArchiveUtil.isEncrypted() function for checking encrypted archive file
+        feature 2-add ArchiveUtil.verifyPasswords() function for checking correct password of encrypted archive file
+        feature 3-optimize and correct some problems of SevenZip extraction
+
+    </description>
+    <organization>
+        <name>شرکت درگاه هوش تجاری</name>
+        <url>http://www.bipsolution.com</url>
+    </organization>
+
+    <dependencies>
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-core</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+
+
+        <!-- 7-Zip-JBinding
+7-Zip-JBinding is a java wrapper for 7-Zip C++ library. It allows extraction of many archive formats using a very fast native library directly from java through JNI. Features:
+
+Extract
+7-Zip	Zip	Rar	Tar	Split	Lzma	Iso	HFS	GZip
+Cpio	BZip2	Z	Arj	Chm	Lhz	Cab	Nsis
+Deb	Rpm	Wim	Udf
+Create/update
+7-Zip	Zip	GZip	Tar	BZip2
+It's cross-platform. Binaries are available for
+› MS-Windows 32/64	› Linux 32/64	› Darwin Mac OS X	› ARM
+Full support for extraction of password protected and volumed archives
+In-memory archive creation/update/extraction
+Artifacts on Maven central (groupId: net.sf.sevenzipjbinding)
+22 example code snippets
+Over 6700 JUnit tests: Dashboard
+Planned: Creation/update of password protected and volumed archives
+Planned: Extraction of more archive formats supported by 7-Zip
+Known bug: JVM crash in case of OutOfMemory exception.
+Workaround: Increase heap using -Xmx parameter.
+-->
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding</artifactId>
+            <version>9.20-2.00beta</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding-all-platforms</artifactId>
+            <version>9.20-2.00beta</version>
+        </dependency>
+
+        <!-- winzipaes
+        crypto routines by http://www.bouncycastle.org/
+
+This library only supports Win-Zip's 256-Bit AES mode. The code was developed to create encrypted ZIP files, that can be decrypted with a Win-Zip (at least version 9) client, which is a widely available MS-Windows application. Later, the ability to decrypt files was added.
+
+You need a bouncycastle jar to build and run the binaries, e.g. lcrypto-jdk15.jar from here. Binaries are not provided, as this library is more for developers to extend than for "users to use".
+-->
+        <dependency>
+            <groupId>de.idyl</groupId>
+            <artifactId>winzipaes</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.junrar</groupId>
+            <artifactId>junrar</artifactId>
+            <version>0.7</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+        <!-- 7-Zip-JBinding
+        7-Zip-JBinding is a java wrapper for 7-Zip C++ library. It allows extraction of many archive formats using a very fast native library directly from java through JNI. Features:
+
+Extract
+7-Zip	Zip	Rar	Tar	Split	Lzma	Iso	HFS	GZip
+Cpio	BZip2	Z	Arj	Chm	Lhz	Cab	Nsis
+Deb	Rpm	Wim	Udf
+Create/update
+7-Zip	Zip	GZip	Tar	BZip2
+It's cross-platform. Binaries are available for
+› MS-Windows 32/64	› Linux 32/64	› Darwin Mac OS X	› ARM
+Full support for extraction of password protected and volumed archives
+In-memory archive creation/update/extraction
+Artifacts on Maven central (groupId: net.sf.sevenzipjbinding)
+22 example code snippets
+Over 6700 JUnit tests: Dashboard
+Planned: Creation/update of password protected and volumed archives
+Planned: Extraction of more archive formats supported by 7-Zip
+Known bug: JVM crash in case of OutOfMemory exception.
+Workaround: Increase heap using -Xmx parameter.
+        -->
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding</artifactId>
+            <version>9.20-2.00beta</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding-all-platforms</artifactId>
+            <version>9.20-2.00beta</version>
+        </dependency>
+
+        <!-- *********************************************************
+    *   logging
+     ********************************************************* -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <!-- *********************************************************
+*   test
+********************************************************* -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>bip.common.compress.test.TestArchiveUtil</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>

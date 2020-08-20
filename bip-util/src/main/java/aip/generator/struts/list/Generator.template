@@ -1,0 +1,70 @@
+package @packagepath@;
+
+import aip.util.AIPException;
+import aip.generator.struts.list.*;
+/*
+fagath vagti az in estefade konid ke zarori bashad ke hameye lnih vh az aval benevisisd
+*/
+public class @name@Generator {
+	public static void main(String[] args) {
+		AIPStrutsReportListWithToolbarGEN gen = new AIPStrutsReportListWithToolbarGEN();
+		AIPStrutsReportListWithToolbarParam param=new AIPStrutsReportListWithToolbarParam();
+		
+		param.setName( "@name@" );
+		param.setTitle("@title@");
+		param.setDestPath("@destPath@");
+		param.setJspPath("@jspPath@");
+		param.setTableName("@tableName@");
+		param.setLoaderSQL("@loaderSQL@");
+		
+		param.setIdColumn("@idColumn@");
+		param.setIdGeneratorClass("@idGeneratorClass@");
+		
+		param.setConnectionDriver("@connectionDriver@");
+		param.setConnectionString("@connectionString@");
+		param.setConnectionUser("@connectionUser@");
+		param.setConnectionPassword("@connectionPassword@");
+		
+		/*
+		 * columnName should exists in loaderSQL
+		 * todo: count and ids querys generate without joins if exists manually handled
+		 */
+		param.setParamColumns(new String[]{@@paramColumns@@ "@paramColumn@" @commaifnotlast@ @@/paramColumns@@});
+		param.setParamColumnsTitle(new String[]{@@paramColumnsTitle@@ "@paramColumnTitle@" @commaifnotlast@ @@/paramColumnsTitle@@});
+		param.setVisibleColumns(new String[][]{
+		@@visibleColumns@@
+				{"@visibleColumn@","@visibleColumn_title@"}@commaifnotlast@
+		@@/visibleColumns@@
+		});
+		/*
+		 * columnName,className,sql
+		 * note: if sql not empty generate HBM and class related that
+		 * todo: class packages should imported manually
+		 * todo: if any relation between manually exists should manually handled
+		 * 0 name in ComboLST
+		 * 1 class for List<class>
+		 * 2 related field in params
+		 * 3 display filed in class
+		 * 4 value filed in class
+		 */
+		param.setParamCombos(new String[][]{
+		@@paramCombos@@
+				{"@paramCombo@","@paramCombo_class@","@paramCombo_relation@","@paramCombo_caption@","@paramCombo_value@"}@commaifnotlast@
+		@@/paramCombos@@
+		});
+		
+		//param.setGeneration ( AIPStrutsReportListWithToolbarParam.GENERATION_FULL);
+		//param.setGeneration ( AIPStrutsReportListWithToolbarParam.GENERATION_JSPPARAM);
+		//param.setGeneration ( AIPStrutsReportListWithToolbarParam.GENERATION_TILES+AIPStrutsReportListWithToolbarParam.GEN_UPD_TILES);
+		//param.setGeneration ( AIPStrutsReportListWithToolbarParam.GENERATION_FULL-param.GEN_UPD_HIBERNATE-param.GEN_UPD_STRUTS-param.GEN_UPD_TILES);
+		param.setGeneration ( @generation@);  
+		
+		try {
+			gen.generateCode(param);
+		} catch (AIPException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

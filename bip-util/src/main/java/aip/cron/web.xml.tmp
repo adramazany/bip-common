@@ -1,0 +1,43 @@
+<!-- 	//"0 0 12 * * ?" Fire at 12pm (noon) every day -->
+<!--     //"0/2 * * * * ?" Fire at every 2 seconds every day -->
+<!--     //0 0 0/2 * * ? fire every 2 hour -->
+  <servlet>
+    <display-name>AIPCronScheluderJobServlet</display-name>
+    <servlet-name>AIPCronScheluderJobServlet</servlet-name>
+    <servlet-class>aip.cron.AIPCronScheluderJobServlet</servlet-class>
+<!-- 	<init-param> -->
+<!-- 		<param-name>cron.UpdateLuceneJob</param-name>  -->
+<!-- 		<param-value>NJob;aip.cron.UpdateLuceneJob;0 0 12 * * ?</param-value> -->
+<!-- 	</init-param>  -->
+	<init-param>
+		<param-name>cron.CheckSiteIsALiveJob</param-name> 
+		<param-value>NJob;aip.cron.AIPCheckSiteIsALiveJob;0 0/25 * * * ?;http://localhost/AIPLaw/lawview.do?reqCode=lawView_amp_lawId=38162_amp_isLaw=1</param-value> 
+	</init-param> 
+	<init-param>
+		<param-name>cron.ExecuteHibSqlJob_UpdateLwlawApproveDate</param-name> 
+		<param-value>NJob;aip.cron.AIPExecuteHibSqlJob;0 0 12 * * ?;update lwlaw l
+		set l.ApproveDate = (select max(la.ApproveDate) from lwphase p,lwapprover la where p.f_lwlawid=l.id and la.f_lwphaseid=p.id and not la.ApproveDate is null)
+		where l.ApproveDate is null 
+		and exists(select * from lwphase p,lwapprover la where p.f_lwlawid=l.id and la.f_lwphaseid=p.id and not la.ApproveDate is null)</param-value> 
+	</init-param> 
+	<init-param>
+		<param-name>cron.ExecuteHibSqlJob_UpdateLwphaseApproveDate</param-name> 
+		<param-value>NJob;aip.cron.AIPExecuteHibSqlJob;0 0 12 * * ?;update lwphase p
+		set p.ApproveDate = (select max(la.ApproveDate) from lwapprover la where la.f_lwphaseid=p.id and not la.ApproveDate is null)
+		where ApproveDate is null 
+		and exists(select * from lwapprover la2 where la2.f_lwphaseid=p.id and not la2.ApproveDate is null)</param-value> 
+	</init-param> 
+	<init-param>
+		<param-name>cron.ExecuteSysCmdJob_ls</param-name> 
+		<param-value>NJob;aip.cron.AIPExecuteSysCmdJob;0 0 0/1 * * ?;ls</param-value> 
+	</init-param> 
+	<init-param>
+		<param-name>cron.ExecuteSysCmdJob_OracleBackup</param-name> 
+		<param-value>NJob;aip.cron.AIPExecuteSysCmdJob;0 0 1 * * ?;exp aiplaw/aiplaw file=aiplaw_%date:~-4,4%%date:~-10,2%%date:~-7,2%.dmp log=aiplaw.log rows=no indexes=no tables=CMBASETABLE,CMBASETABLETYPE,CMBASKET,CMBASKETITEM,CMKEYWORD,CMKEYWORDLOG,CMLOG,CMLOGERROR,CMNOTE,CMORGANIZATION,CMPERSON,CMSEARCHCONFIG,CMSETTING,CMTHESAURUS,CMUSECASE,CMUSECASENAME,CMUSERLOG,CMWORD,CMWORDSYNONYM,LWAPPROVER,LWCOMMANDPIC,LWDISTRIBUTEPIC,LWEXECUTECONDITION,LWEXECUTOR,LWLAW,LWLAWCHANGE,LWLAWFOOTNOTE,LWLAWMAINNEXT,LWLAWREFER,LWLAWREGULATION,LWLAWSECTIONSTATUS,LWLAWSTRUCTURE,LWLAWTEMPLATE,LWLAWTEMPLATESTRUCTURE,LWPHASE,LWPHASEPIC,LWRECEIVER,LWSECTION,LWSECTIONCHANGE,LWSECTIONKEYWORD,LWSECTIONKEYWORDLOG,LWSECTIONLOG,LWSECTIONTOPIC,LWSECTION_TEST,LWTOPIC,OPOPINION,OPOPINIONGIVER,OPOPINIONGIVEROPINIONTYPE,OPOPINIONGIVERPERSON,OPOPINIONHISTORY,OPOPINIONKEYWORD,OPOPINIONLAW,OPOPINIONLAWRELATED,OPOPINIONOPINIONRELATED,OPOPINIONOPINIONTYPES,OPOPINIONRECEIVERLEGAL,OPOPINIONRECEIVERREAL,OPOPINIONTOPIC,PRDECISION,PRDELEGATE,PRDELEGATEPOSITION,PRDOC,PRDOCDETAIL,PRDOCTYPE,PRPLAN,PRPLANCOMMISSION,PRPLANCOMMISSIONDOC,PRPLANCOMMISSIONREPORT,PRPLANCONSIDERATION,PRPLANCORRECTIONLETTER,PRPLANCORRESPONDANCE,PRPLANDELPROPOSER,PRPLANEDITSUGGEST,PRPLANEXPERTREPORT,PRPLANFINALDECISION,PRPLANGOVOPINION,PRPLANGOVPROPOSER,PRPLANGOVSIGNER,PRPLANMAGAZINE,PRPLANREFERTOCOMMISSION,PRPLANRELATION,PRPLANREQUESTANDCHANGESTATE,PRREQUESTTYPE,PRSESSION,PRSTEPRESULT,PRTERM,PRTERMCOMMISSION,RULNAZARIMAGE,SCGROUP,SCGROUPPERSONRIGHT,SCGROUPRIGHT,SCGROUPROLE,SCROLE,SCUSER,SCUSERALLROLE,SCUSERGROUP,SCUSERPERSONRIGHT,SCUSERRIGHT,SCUSERROLE</param-value> 
+	</init-param> 
+	<load-on-startup/>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AIPCronScheluderJobServlet</servlet-name>
+    <url-pattern>/servlet/aipcron</url-pattern>
+  </servlet-mapping>

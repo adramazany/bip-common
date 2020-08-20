@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <artifactId>bip-common</artifactId>
+    <groupId>bip.common</groupId>
+    <version>2.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>bip-common-compress</artifactId>
+  <version>2.2.2</version>
+  <description>version 2.2.2-980502
+        --------------------
+        issue 1-compress file's RandomAccessFile is not closed after extraction!
+
+        version 2.2.1-980413
+        --------------------
+        issue 1-adding maven shade plugin for creating full executable jar
+
+        version 2.2.0-980315
+        --------------------
+        feature 1-add ArchiveUtil.isEncrypted() function for checking encrypted archive file
+        feature 2-add ArchiveUtil.verifyPasswords() function for checking correct password of encrypted archive file
+        feature 3-optimize and correct some problems of SevenZip extraction</description>
+  <organization>
+    <name>شرکت درگاه هوش تجاری</name>
+    <url>http://www.bipsolution.com</url>
+  </organization>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer>
+                  <mainClass>bip.common.compress.test.TestArchiveUtil</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>hamcrest-core</artifactId>
+          <groupId>org.hamcrest</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>

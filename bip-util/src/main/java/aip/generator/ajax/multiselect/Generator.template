@@ -1,0 +1,40 @@
+package @packagepath@;
+
+import aip.util.AIPException;
+import aip.generator.ajax.multiselect.*;
+/*
+fagath vagti az in estefade konid ke zarori bashad ke hameye lnih vh az aval benevisisd
+*/
+public class @detail@Generator {
+	public static void main(String[] args) {
+		AIPAjaxMultiSelectGenerator gen = new AIPAjaxMultiSelectGenerator();
+		AIPAjaxMultiSelectGeneratorParam param=new AIPAjaxMultiSelectGeneratorParam();
+		
+		param.setMaster("@master@");
+		param.setBase("@base@");
+		param.setDetail("@detail@");
+
+		param.setBaseEntityClass("@baseEntityClass@");
+		param.setDetailEntityClass("@detailEntityClass@");
+		
+		param.setMasterIdArg("@masterIdArg@");
+		param.setMasterIdArgType("@masterIdArgType@");
+		param.setBaseIdArg("@baseIdArg@");
+		param.setDetailFk2baseArg("@detailFk2baseArg@");
+		param.setDetailFk2baseArgType("@detailFk2baseArgType@");
+		param.setBaseTitle("@baseTitle@");
+		
+		
+		param.setTitle("@title@");
+		param.setDestPath("@destPath@");
+		param.setJspPath("@jspPath@");
+		
+		param.setGeneration ( @generation@);
+
+		try {
+			gen.generateCode(param);
+		} catch (AIPException e) {
+			e.printStackTrace();
+		}
+	}
+}

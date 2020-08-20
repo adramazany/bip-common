@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+<comment>BIP Solution ETL properties file</comment>
+<!-- if query-etl-batch-len>1 then query-etl-oneid where clause mut be in format of in (:id) -->
+<entry key="query-etl-batch-len">1000</entry>
+<entry key="query-etl-id-prefix">'</entry>
+<entry key="query-etl-id-suffix">'</entry>
+<entry key="query-maxid">select nvl(max(oldid),0) from table1_dest</entry>
+<entry key="query-count">
+select count(*) from table1_src dext
+ left outer join icrsuser.geo_tab geo on dext.PERSON_ADDRESS_GEO_SERIAL= geo.geo_serial 
+ where dext.olap_stamp_id>:maxid_int
+</entry>
+<entry key="query-onebyone-id">DEATH_REGST_DATE_NO_OFFICE</entry>
+<entry key="query-etl">
+	select  dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_REGST_DATE_NO_OFFICE 
+	from table1_src dext
+	where dext.olap_stamp_id>:maxid_int
+    order by dext.olap_stamp_id
+</entry>
+<entry key="query-etl-oneid">
+select  dext.PERSON_NIN
+,dext.DEATH_REGST_NO
+,dext.OFFICE_CODE
+,dext.DATE_OF_DEATH 
+,dext.DEATH_REGST_DATE 
+,dext.DEATH_GEO_SERIAL
+,dext.PERSON_ADDRESS_GEO_SERIAL
+,dext.death_regst_date
+,dext.HOZEH_KIND 
+,geo.GEO_FLAG
+,dext.DATE_OF_BIRTH
+,dext.death_confirm_aut_code
+,(	select drg1.death_reason_group_code from ICRSUSER.death_reason_group_tab drg3
+	join ICRSUSER.death_reason_group_tab drg2 on drg2.death_reason_group_code = drg3.parent_code
+	join ICRSUSER.death_reason_group_tab drg1 on drg1.death_reason_group_code = drg2.parent_code
+	where drg3.death_reason_group_code=dext.death_reason_code
+) as death_reason_code
+,dext.sex_code
+,dext.DEATH_REGST_DATE 
+,dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_OFFICE_REGST_NO
+,dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_REGST_DATE_NO_OFFICE
+,dext.DEATH_RECORD_STAGE
+,case when exists(select * from icrsuser.raked_tab raked where raked.person_nin=dext.person_nin) then 2 else 1 end as f_fotraked
+,dext.CODE_ACTIVE_FLAG
+,dext.olap_stamp_id
+from table1_src dext
+left outer join icrsuser.geo_tab geo on dext.PERSON_ADDRESS_GEO_SERIAL= geo.geo_serial 
+where dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE in (:id)
+</entry>
+<entry key="sql-insert">
+declare 
+  v_isexist integer;
+begin
+  select count(*) into v_isexist from table1_dest where DEATH_REGST_DATE_NO_OFFICE=':DEATH_REGST_DATE_NO_OFFICE';
+if v_isexist &lt;= 0 then
+
+	INSERT INTO table1_dest(id,codemelli,f_tarikh_fot,f_jensiat,f_tarikh_sabtfot,f_mahal_fot
+	,f_jarimoavaghe_fot,f_tarikh_vorodfot,f_takhirsabt_fot,f_mostanadfot
+	, f_edare,f_shahrrosta,f_grohseni_fot,f_elatefot,oldid
+	,death_record_stage,f_fotraked
+	,code_active_flag,DEATH_REGST_DATE_NO_OFFICE)
+	VALUES(SEQ_table1_dest.nextval,:codemelli,:f_tarikh_fot,:f_jensiat,:f_tarikh_sabtfot,:f_mahal_fot
+	,:f_jarimoavaghe_fot,:f_tarikh_vorodfot,:f_takhirsabt_fot,:f_mostanadfot
+	,:f_edare,:f_shahrrosta,:f_grohseni_fot,:f_elatefot,:olap_stamp_id
+	,:death_record_stage,:f_fotraked
+	,':code_active_flag',':DEATH_REGST_DATE_NO_OFFICE');
+	
+else
+
+	update table1_dest set 
+	codemelli=:codemelli
+	,f_tarikh_fot=:f_tarikh_fot
+	,f_jensiat=:f_jensiat
+	,f_tarikh_sabtfot=:f_tarikh_sabtfot
+	,f_mahal_fot=:f_mahal_fot
+	,f_jarimoavaghe_fot=:f_jarimoavaghe_fot
+	,f_tarikh_vorodfot=:f_tarikh_vorodfot
+	,f_takhirsabt_fot=:f_takhirsabt_fot
+	,f_mostanadfot=:f_mostanadfot
+	,f_edare=:f_edare
+	,f_shahrrosta=:f_shahrrosta
+	,f_grohseni_fot=:f_grohseni_fot
+	,f_elatefot=:f_elatefot
+	,death_record_stage=:death_record_stage
+	,f_fotraked=:f_fotraked
+	,code_active_flag=':code_active_flag'
+	,oldid=:olap_stamp_id
+	where DEATH_REGST_DATE_NO_OFFICE=':DEATH_REGST_DATE_NO_OFFICE'
+;
+end if;
+end;
+</entry>
+<entry key="sql-update">
+	update table1_dest set 
+	codemelli=:codemelli
+	,f_tarikh_fot=:f_tarikh_fot
+	,f_jensiat=:f_jensiat
+	,f_tarikh_sabtfot=:f_tarikh_sabtfot
+	,f_mahal_fot=:f_mahal_fot
+	,f_jarimoavaghe_fot=:f_jarimoavaghe_fot
+	,f_tarikh_vorodfot=:f_tarikh_vorodfot
+	,f_takhirsabt_fot=:f_takhirsabt_fot
+	,f_mostanadfot=:f_mostanadfot
+	,f_edare=:f_edare
+	,f_shahrrosta=:f_shahrrosta
+	,f_grohseni_fot=:f_grohseni_fot
+	,f_elatefot=:f_elatefot
+	,death_record_stage=:death_record_stage
+	,f_fotraked=:f_fotraked
+	,code_active_flag=':code_active_flag'
+	,oldid=:olap_stamp_id
+	where DEATH_REGST_DATE_NO_OFFICE=':DEATH_REGST_DATE_NO_OFFICE'
+</entry>
+<entry key="query-existids">select oldid from table1_dest</entry>
+<entry key="query-exist-oneid">select oldid from table1_dest where oldid=':id'</entry>
+
+
+<!-- CODEMELLI -->
+<entry key="query-count-codemelli">
+select count(*) from table1_src dext
+ left outer join icrsuser.geo_tab geo on dext.PERSON_ADDRESS_GEO_SERIAL= geo.geo_serial 
+ where dext.PERSON_NIN in (:fltr_codemelli)
+ and(dext.OFFICE_CODE>=100 or dext.OFFICE_CODE=5 or dext.OFFICE_CODE=23)
+ and dext.DEATH_RECORD_STAGE='2'
+</entry>
+<entry key="query-etl-codemelli">
+	select  dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_REGST_DATE_NO_OFFICE 
+	from table1_src dext
+ where dext.PERSON_NIN in (:fltr_codemelli)
+	and dext.DEATH_RECORD_STAGE='2'
+	and (dext.OFFICE_CODE>=100  or dext.OFFICE_CODE=5 or dext.OFFICE_CODE=23)
+    order by dext.olap_stamp_id
+</entry>
+
+<!-- TARIKH -->
+<entry key="query-count-tarikh">
+select count(*) from table1_src dext
+ left outer join icrsuser.geo_tab geo on dext.PERSON_ADDRESS_GEO_SERIAL= geo.geo_serial 
+ where dext.DEATH_REGST_DATE between :fltr_tarikhaz_int and :fltr_tarikhta_int
+	and (0=:fltr_edare_int or OFFICE_CODE=:fltr_edare_int)    
+ and dext.DEATH_RECORD_STAGE='2'
+</entry>
+<entry key="query-etl-tarikh">
+	select  dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_REGST_DATE_NO_OFFICE 
+	from table1_src dext
+ where dext.DEATH_REGST_DATE between :fltr_tarikhaz_int and :fltr_tarikhta_int
+	and dext.DEATH_RECORD_STAGE='2'
+	and (0=:fltr_edare_int or OFFICE_CODE=:fltr_edare_int)    
+    order by dext.olap_stamp_id
+</entry>
+
+
+<!-- tableid -->
+<entry key="query-count-tableid">
+select count(*) from table1_src dext
+ left outer join icrsuser.geo_tab geo on dext.PERSON_ADDRESS_GEO_SERIAL= geo.geo_serial 
+ where dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE=':maxid'
+</entry>
+<entry key="query-etl-tableid">
+	select  dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE as DEATH_REGST_DATE_NO_OFFICE 
+	from table1_src dext
+	where dext.DEATH_REGST_DATE||'-'||lpad(dext.DEATH_REGST_NO,7,'0')||'-'||dext.OFFICE_CODE=':maxid'
+</entry>
+
+<!-- ETL start & finish commands -->
+<entry key="preStartETL">
+</entry>
+<entry key="postEndETL">
+	delete from table1_dest where code_active_flag='I'
+</entry>
+
+<!-- mappings -->
+<entry key="mappings">
+	:codemelli=PERSON_NIN
+	:oldid=olap_stamp_id
+	:olap_stamp_id=olap_stamp_id
+	:DEATH_REGST_DATE_NO_OFFICE=DEATH_REGST_DATE_NO_OFFICE
+	:f_tarikh_fot=tarikh_fot
+	:f_jensiat=sex_code
+</entry>
+
+
+
+</properties>
+																
+																
