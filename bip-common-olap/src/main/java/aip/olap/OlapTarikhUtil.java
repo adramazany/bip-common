@@ -1,6 +1,7 @@
 package aip.olap;
 
 import aip.util.NVL;
+import bip.common.util.calendar.JalaliCalendar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -406,7 +407,12 @@ public class OlapTarikhUtil {
 		if(tarikhAz.day==1){
 			return getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,0);
 		}else{
-			int lastDayOfThisMonth = tarikhAz.month<7 ? 31 : 30;
+			int lastDayOfThisMonth =31;
+			if(tarikhAz.month==12){
+				lastDayOfThisMonth = (new JalaliCalendar()).isLeapYear(tarikhAz.year) ? 30 : 29;
+			}else if(tarikhAz.month>=7 && tarikhAz.month<=11){
+				lastDayOfThisMonth=30;
+			}
 			return getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,tarikhAz.day)
 					+":"
 					+getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,lastDayOfThisMonth);
