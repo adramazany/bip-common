@@ -20,6 +20,8 @@
         <module>bip-common-obiee</module>
         <module>bip-common-owasp</module>
         <module>bip-common-web</module>
+        <module>bip-common-xssfilter</module>
+        <module>bip-common-security</module>
     </modules>
     <version>2.0</version>
 
