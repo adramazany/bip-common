@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import aip.util.NVL;
+import fi.joensuu.joyds1.calendar.JalaliCalendar;
 
 public class OlapTarikhUtil {
 	public static String cnvTarikhAzTa2TarikhOptimizeSet(String dimTarikhName,String tarikhAzStr,String tarikhTaStr){
@@ -406,7 +407,12 @@ public class OlapTarikhUtil {
 		if(tarikhAz.day==1){
 			return getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,0);
 		}else{
-			int lastDayOfThisMonth = tarikhAz.month<7 ? 31 : 30;
+			int lastDayOfThisMonth =31;
+			if(tarikhAz.month==12){
+				lastDayOfThisMonth = (new JalaliCalendar()).isLeapYear(tarikhAz.year) ? 30 : 29;
+			}else if(tarikhAz.month>=7 && tarikhAz.month<=11){
+				lastDayOfThisMonth=30;
+			}
 			return getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,tarikhAz.day)
 					+":"
 					+getTarikh2HierSaalNimsaalFaslMahRooz(dimTarikhName, tarikhAz.year, tarikhAz.month,lastDayOfThisMonth);

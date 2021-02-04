@@ -5,8 +5,8 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>bip.util</groupId>
 	<artifactId>bip-util</artifactId>
-	<version>1.2.2</version>
-	<description>release date : 971128</description>
+	<version>1.2.3</version>
+
 	<organization>
 		<name>BIP ltd</name>
 		<url>http://www.bipsolution.com</url>
@@ -16,6 +16,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<spring-ver>4.2.1.RELEASE</spring-ver>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+	<description>
+		version 1.2.3-991109
+		---------------
+		bug 1- when get report in range 1398/12/24-1399/01/01 it want to get 1398/12/30 even in non-leap-year of jalali calendar
+
+	</description>
   
 	  <dependencies>
 	  
