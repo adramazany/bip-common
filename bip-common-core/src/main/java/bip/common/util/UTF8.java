@@ -13,7 +13,7 @@ public class UTF8
   {
     try
     {
-      System.out.println("UTF8.main()" + URLEncoder.encode(URLEncoder.encode("ی"), "iso8859-1"));
+      System.out.println("UTF8.main()" + URLEncoder.encode(URLEncoder.encode("ی","UTF-8"), "iso8859-1"));
     }
     catch (UnsupportedEncodingException e)
     {
