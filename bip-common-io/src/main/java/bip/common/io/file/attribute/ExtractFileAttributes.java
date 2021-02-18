@@ -10,11 +10,11 @@ import java.util.Properties;
 public class ExtractFileAttributes {
 
     public static Properties extractAttributes(File source){
-
+        throw new RuntimeException("Not implemented yet!");
     }
 
     public static Properties extractAttributes(InputStream source){
-
+        throw new RuntimeException("Not implemented yet!");
     }
 
 }
