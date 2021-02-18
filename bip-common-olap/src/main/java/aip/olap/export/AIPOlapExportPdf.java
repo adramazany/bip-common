@@ -1,11 +1,11 @@
 package aip.olap.export;
 
 import aip.olap.AIPOlapUtil;
+import aip.olap.util.BIPOlapUtil;
+import aip.olap.util.collections.Tree;
 import aip.util.AIPUtil;
 import aip.util.DateConvert;
 import aip.util.NVL;
-import bip.common.util.collections.Tree;
-import bip.common.util.olap.BIPOlapUtil;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;

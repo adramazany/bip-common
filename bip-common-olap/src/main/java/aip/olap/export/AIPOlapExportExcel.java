@@ -1,11 +1,12 @@
 package aip.olap.export;
 
 import aip.olap.AIPOlapUtil;
+import aip.olap.util.BIPOlapUtil;
+import aip.olap.util.collections.Tree;
 import aip.util.AIPUtil;
 import aip.util.DateConvert;
 import aip.util.NVL;
-import bip.common.util.collections.Tree;
-import bip.common.util.olap.BIPOlapUtil;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -444,7 +445,7 @@ public class AIPOlapExportExcel extends AIPOlapExportAbstract{
 	 /*
 	  * title style
 	  */
-	private CellStyle getCellStyleTitle(Workbook wb,AIPOlapExportExcelParam param){
+	private CellStyle getCellStyleTitle(Workbook wb, AIPOlapExportExcelParam param){
 		 Font font = wb.createFont();
 		 //font.setBoldweight(Font.BOLDWEIGHT_BOLD);
 		font.setBold(true);

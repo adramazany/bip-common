@@ -1,6 +1,8 @@
 package aip.olap.process;
 
 import aip.util.AIPUtil;
+import bip.common.util.BIPUtil;
+import bip.common.util.HttpUtil;
 
 
 public class AIPOlapProcessSSAS extends AIPOlapProcessAbstract {
@@ -14,7 +16,7 @@ public class AIPOlapProcessSSAS extends AIPOlapProcessAbstract {
 		String res;
 		String errorMessage = "پردازش بانک اطلاعاتی "+database+" و دایمنشن "+dimension+" با خطا مواجه شده است!";
 		try {
-			res = AIPUtil.httpGet(url);
+			res = HttpUtil.httpGet(url);
 			if(!res.equals(".")){
 				throw new AIPOlapProcessException(errorMessage);
 			}
@@ -23,12 +25,15 @@ public class AIPOlapProcessSSAS extends AIPOlapProcessAbstract {
 		}
 	}
 
+	/**
+	 * @deprecated
+	 */
 	public void processCube(String database, String cube) throws AIPOlapProcessException {
 		String url=getUrl()+"?database="+database+"&cube="+cube;
 		String res;
 		String errorMessage = "پردازش بانک اطلاعاتی "+database+" و کیوب "+cube+" با خطا مواجه شده است!";
 		try {
-			res = AIPUtil.httpGet(url);
+			res = HttpUtil.httpGet(url);
 			if(!res.equals(".")){
 				throw new AIPOlapProcessException(errorMessage);
 			}
