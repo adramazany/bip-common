@@ -3,38 +3,338 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="166e9129-3e32-4cee-99c6-e6590675c6fe" name="Default" comment="-" />
-    <list id="fd385948-68f1-40ab-b00e-49514a520bcb" name="ignore-.idea" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_io7m_xom_xom_1_2_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_configuration_commons_configuration_1_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_nekohtml_nekohtml_1_9_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_extras_beanshell_bsh_2_0b6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_batik_constants_1_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_batik_css_1_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_batik_i18n_1_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_batik_shared_resources_1_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_batik_util_1_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_xmlgraphics_xmlgraphics_commons_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_owasp_antisamy_antisamy_1_5_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_owasp_esapi_esapi_2_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_serializer_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_xalan_2_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_12_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_ext_1_3_04.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="166e9129-3e32-4cee-99c6-e6590675c6fe" name="Default" comment="-">
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/bip-common-apache-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/classes/bip/common/apache/tika/ExtractFileAttributes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/classes/bip/common/codec/BIPDigest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-apache/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/bip-common-batch-2.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/decider/BadDataDetectedDecider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/exceptions/CouldNotCheckExistsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/handler/EntityErrorHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/listener/CheckExistsReturnKeyItemWriterListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/listener/ObjectWriteSkipListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/listener/ReturnKeyItemWriterListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/tasklet/ExecuteSqlReturnKeyTasklet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/tasklet/ExecuteSqlTasklet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/tasklet/IfOpTasklet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/tasklet/NoOpTasklet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/tasklet/ReturnKeyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/writer/BatchErrorHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/writer/CheckExists.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/writer/CheckExistsReturnKeyItemWriter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/classes/bip/common/batch/writer/ReturnKeyItemWriter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-batch/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/bip-common-compress-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/ArchiveUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/PasswordIncorrectZipException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/SevenZipUtil$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/SevenZipUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/detect/EncryptionDetector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/detect/Zip4jEncryptionDetector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/extract/Extract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/extract/Zip4jExtract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/model/ArchiveType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/bip/common/compress/test/TestArchiveUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/original-bip-common-compress-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/RFP-pass-123.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/bip/common/compress/ArchiveUtilTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/test-pass-123.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/test-pass-123.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/tmp-pass-123.7z" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/tmp-pass-123.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-compress/target/test-classes/tmp-pass-123.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/bip-common-core-2.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/AIPConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/AIPException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/AIPUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/DateConvert.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/NVL.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/AIPENUM_LOGLEVEL.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/NIOLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/NIOLogENT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/NIOLogInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/NIOLogLST.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/aip/util/log/NIOLogParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/BIPDongle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/BIPJalaliDate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/BIPRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/BIPUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/DataSourceProperties$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/DataSourceProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/HttpUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/NVL.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/PersianCollator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/SyncIds.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/SyncIdsResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/UTF8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/Calendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/CalendarFromString.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/GregorianCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/GregorianCalendarGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/JalaliCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/JulianGregorianCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/MayanCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/OldWorldCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/PersianCalendar.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/Resources.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/classes/bip/common/util/calendar/YMD.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-core/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/bip-common-db-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPDBColumn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPDBTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPDBUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPPrintParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPReportParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPSqlException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/classes/aip/db/AIPTableModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-db/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/bip-common-export-2.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/bip/common/export/exception/ExportServiceException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/bip/common/export/factory/ExcelCellFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/bip/common/export/service/BIPExportService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/bip/common/export/service/BIPExportServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-export/target/test-classes/bip/common/export/service/BIPExportServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/bip-common-io-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/classes/bip/common/io/file/attribute/ExtractFileAttributes.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-io/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/bip-common-obiee-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/classes/bip/common/obiee/servlet/BridgeServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-obiee/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/bip-common-olap-2.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/AIPOlapDiscover.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/AIPOlapEngineSecurityInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/AIPOlapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/NoneRolapAggregator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/OlapTarikhUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/ROlapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/TarikSplited.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExport.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportAbstract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportExcel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportExcelParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportHeader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportHeaderItem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportJSON.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportPdf.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/export/AIPOlapExportPdfParam.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/process/AIPOlapProcessAbstract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/process/AIPOlapProcessException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/process/AIPOlapProcessInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/process/AIPOlapProcessManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/process/AIPOlapProcessSSAS.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/AIPOlapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/AIPSoapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/BIPOlapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/NoneRolapAggregator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/OlapTarikhUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/ROlapUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/TarikSplited.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/collections/Node.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/collections/Tree$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/classes/aip/olap/util/collections/Tree.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-olap/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/bip-common-owasp-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/bip/common/owasp/filter/BadInputFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/bip/common/owasp/valve/BadInputValve.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/ESAPI-AccessControlPolicy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/ESAPI.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/antisamy-esapi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/users.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/validation.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/add-header-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/add-httponly-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/add-secure-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/authentication-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/bean-shell-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/bean-shell-rule.bsh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/detect-outbound-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/dynamic-insertion-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/enforce-https-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/must-match-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/replace-outbound-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/restrict-content-type-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/restrict-extension-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/restrict-method-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/restrict-source-ip-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/restrict-user-agent-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policies/virtual-patch-policy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/classes/esapi/waf-policy.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-owasp/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/bip-common-security-1.3.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/ESAPI-AccessControlPolicy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/ESAPI.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/antisamy-esapi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/bip/common/security/csrf/CSRFValidationFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/bip/common/security/xss/XSSFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/bip/common/security/xss/XSSRequestWrapper$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/bip/common/security/xss/XSSRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/bip/common/security/xss/XSSUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/user-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/classes/validation.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/antisamy-1.5.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/batik-constants-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/batik-css-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/batik-i18n-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/batik-shared-resources-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/batik-util-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/bsh-2.0b6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-beanutils-1.9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-codec-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-collections-3.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-collections4-4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-configuration-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-fileupload-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-io-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-lang-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/esapi-2.2.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/httpclient-4.5.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/httpcore-4.4.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/jsoup-1.13.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/junit-4.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/log4j-1.2.17.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/nekohtml-1.9.22.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/serializer-2.7.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/servlet-api-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xalan-2.7.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xercesImpl-2.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xml-apis-1.4.01.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xml-apis-ext-1.3.04.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xmlgraphics-commons-2.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/libs/xom-1.2.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-security/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/bip-common-web-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/BIPCommonWeb.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPCharConvertRequestFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPCharConvertRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPCharConvertResponseWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPHqlAdminServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPMdxAdminServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPSessionCounter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPSqlAdminServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/classes/bip/common/web/servlet/BIPSysAdminServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/libs/bip-common-core-2.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/libs/servlet-api-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/bip-common-xssfilter-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/ESAPI-AccessControlPolicy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/ESAPI.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/antisamy-esapi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/bip/common/web/security/XSSFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/bip/common/web/security/XSSRequestWrapper$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/bip/common/web/security/XSSRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/bip/common/web/security/XSSUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/user-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/classes/validation.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/antisamy-1.5.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/batik-constants-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/batik-css-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/batik-i18n-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/batik-shared-resources-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/batik-util-1.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/bsh-2.0b6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-beanutils-1.9.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-codec-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-collections-3.2.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-collections4-4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-configuration-1.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-fileupload-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-io-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-lang-2.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/esapi-2.2.1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/httpclient-4.5.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/httpcore-4.4.13.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/jsoup-1.13.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/junit-4.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/log4j-1.2.17.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/nekohtml-1.9.22.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/serializer-2.7.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/servlet-api-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xalan-2.7.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xercesImpl-2.12.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xml-apis-1.4.01.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xml-apis-ext-1.3.04.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xmlgraphics-commons-2.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/libs/xom-1.2.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bip-common-xssfilter/target/test-classes/bip/common/web/security/XSSUtilTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +373,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="a.ramezani &lt;adramazany@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="JupyterTrust" id="b5c5c611-f18c-467a-aad3-bf8586a40a14" />
   <component name="MavenImportPreferences">
@@ -461,7 +767,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="166e9129-3e32-4cee-99c6-e6590675c6fe" name="Default" comment="" />
-      <changelist id="fd385948-68f1-40ab-b00e-49514a520bcb" name="ignore-.idea" comment="" />
+      <changelist id="" name="ignore-.idea" comment="" />
       <created>1549518720699</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -533,7 +839,7 @@
       <workItem from="1627916466108" duration="1342000" />
       <workItem from="1627997969727" duration="40000" />
       <workItem from="1639031031462" duration="1961000" />
-      <workItem from="1639632326503" duration="1244000" />
+      <workItem from="1639632326503" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.2.3&#10;bug 1-OlapTarikhUtil - reporting on 1398/12/24 to 1399/01/01 return exception : could not found 1398.12.30 !">
       <created>1612419347873</created>
@@ -605,11 +911,29 @@
       <option name="project" value="LOCAL" />
       <updated>1639670979487</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ignore-.idea">
+      <created>1639671666059</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639671666059</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
@@ -623,13 +947,18 @@
     <MESSAGE value="version 2.1.2-991130&#10;        --------------------&#10;        issue 1-change bip-core:2.0 to bip-common-core:2.2.0&#10;        issue 2- copy BIPOlapUtil and some related class from bip-util" />
     <MESSAGE value="some changes" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="ignore-.idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore-.idea" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="0" key="CommitChangelistDialog2" timestamp="1639670978393">
+    <state x="341" y="71" key="#Deployment" timestamp="1639671659464">
       <screen x="0" y="0" width="1536" height="826" />
     </state>
-    <state x="336" y="0" key="CommitChangelistDialog2/0.0.1536.826@0.0.1536.826" timestamp="1639670978393" />
+    <state x="341" y="71" key="#Deployment/0.0.1536.826@0.0.1536.826" timestamp="1639671659464" />
+    <state x="336" y="0" key="CommitChangelistDialog2" timestamp="1639671731760">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="336" y="0" key="CommitChangelistDialog2/0.0.1536.826@0.0.1536.826" timestamp="1639671731760" />
     <state x="147" y="64" key="DiffContextDialog" timestamp="1639670952716">
       <screen x="0" y="0" width="1536" height="826" />
     </state>
@@ -638,18 +967,22 @@
       <screen x="0" y="0" width="1536" height="826" />
     </state>
     <state x="277" y="44" key="SettingsEditor/0.0.1536.826@0.0.1536.826" timestamp="1639671462637" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1639670981471">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1639671669129">
       <screen x="0" y="0" width="1536" height="826" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.826@0.0.1536.826" timestamp="1639670981471" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.826@0.0.1536.826" timestamp="1639671669129" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1639671697849">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.826@0.0.1536.826" timestamp="1639671697849" />
     <state x="478" y="101" width="580" height="624" key="find.popup" timestamp="1639031041896">
       <screen x="0" y="0" width="1536" height="826" />
     </state>
     <state x="478" y="101" width="580" height="624" key="find.popup/0.0.1536.826@0.0.1536.826" timestamp="1639031041896" />
-    <state x="530" y="314" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1639671420624">
+    <state x="530" y="314" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1639671779970">
       <screen x="0" y="0" width="1536" height="826" />
     </state>
-    <state x="530" y="314" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.826@0.0.1536.826" timestamp="1639671420624" />
+    <state x="530" y="314" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.826@0.0.1536.826" timestamp="1639671779970" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
