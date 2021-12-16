@@ -13,9 +13,11 @@
       <module fileurl="file://$PROJECT_DIR$/bip-common-obiee/bip-common-obiee.iml" filepath="$PROJECT_DIR$/bip-common-obiee/bip-common-obiee.iml" />
       <module fileurl="file://$PROJECT_DIR$/bip-common-olap/bip-common-olap.iml" filepath="$PROJECT_DIR$/bip-common-olap/bip-common-olap.iml" />
       <module fileurl="file://$PROJECT_DIR$/bip-common-owasp/bip-common-owasp.iml" filepath="$PROJECT_DIR$/bip-common-owasp/bip-common-owasp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bip-common-security/bip-common-security.iml" filepath="$PROJECT_DIR$/bip-common-security/bip-common-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/bip-common-web/bip-common-web.iml" filepath="$PROJECT_DIR$/bip-common-web/bip-common-web.iml" />
-      <module fileurl="file://C:\java\workspace-maven\bip-common\bip-common-compress\bip-compress.iml" filepath="C:\java\workspace-maven\bip-common\bip-common-compress\bip-compress.iml" />
-      <module fileurl="file://C:\java\workspace-maven\bip-common\bip-common-export\bip-export.iml" filepath="C:\java\workspace-maven\bip-common\bip-common-export\bip-export.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bip-common-xssfilter/bip-common-xssfilter.iml" filepath="$PROJECT_DIR$/bip-common-xssfilter/bip-common-xssfilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bip-common-compress/bip-compress.iml" filepath="$PROJECT_DIR$/bip-common-compress/bip-compress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bip-common-export/bip-export.iml" filepath="$PROJECT_DIR$/bip-common-export/bip-export.iml" />
       <module fileurl="file://$PROJECT_DIR$/bip-util/bip-util.iml" filepath="$PROJECT_DIR$/bip-util/bip-util.iml" />
     </modules>
   </component>

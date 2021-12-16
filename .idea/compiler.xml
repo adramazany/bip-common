@@ -6,23 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bip-batch" />
-        <module name="bip-common-apache" />
-        <module name="bip-common-batch" />
-        <module name="bip-common-compress" />
-        <module name="bip-common-core" />
-        <module name="bip-common-db" />
-        <module name="bip-common-export" />
-        <module name="bip-common-io" />
-        <module name="bip-common-obiee" />
-        <module name="bip-common-olap" />
         <module name="bip-common-owasp" />
-        <module name="bip-common-web" />
-        <module name="bip-compress" />
+        <module name="bip-common-io" />
         <module name="bip-core" />
+        <module name="bip-common-batch" />
         <module name="bip-export" />
-        <module name="bip-olap" />
+        <module name="bip-common-olap" />
+        <module name="bip-common-export" />
+        <module name="bip-common-web" />
+        <module name="bip-common-db" />
+        <module name="bip-batch" />
+        <module name="bip-common-security" />
+        <module name="bip-common-obiee" />
         <module name="bip-util" />
+        <module name="bip-compress" />
+        <module name="bip-common-core" />
+        <module name="bip-common-xssfilter" />
+        <module name="bip-common-apache" />
+        <module name="bip-common-compress" />
+        <module name="bip-olap" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,9 +38,11 @@
       <module name="bip-common-export" target="1.5" />
       <module name="bip-common-io" target="1.5" />
       <module name="bip-common-obiee" target="1.5" />
-      <module name="bip-common-olap" target="1.5" />
+      <module name="bip-common-olap" target="6" />
       <module name="bip-common-owasp" target="1.5" />
+      <module name="bip-common-security" target="1.5" />
       <module name="bip-common-web" target="1.5" />
+      <module name="bip-common-xssfilter" target="1.5" />
       <module name="bip-olap" target="1.5" />
       <module name="bip-util" target="1.5" />
     </bytecodeTargetLevel>
