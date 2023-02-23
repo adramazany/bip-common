@@ -22,7 +22,7 @@
         <!-- database -->
         <!-- ORACLE database driver -->
         <dependency>
-            <groupId>com.oracle</groupId>
+            <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc6</artifactId>
         </dependency>
 

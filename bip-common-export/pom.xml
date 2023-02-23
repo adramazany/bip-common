@@ -25,7 +25,6 @@
         <dependency>
             <groupId>bip.common</groupId>
             <artifactId>bip-common-core</artifactId>
-            <version>2.2.0</version>
         </dependency>
 
         <!-- Spring Framework -->
@@ -66,8 +65,9 @@
 
 
         <dependency>
-            <groupId>com.oracle</groupId>
+            <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
             <optional>true</optional>
         </dependency>
         <dependency>

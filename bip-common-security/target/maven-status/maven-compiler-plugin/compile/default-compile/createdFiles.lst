@@ -1,5 +1,0 @@
-bip\common\security\xss\XSSUtil.class
-bip\common\security\xss\XSSRequestWrapper$1.class
-bip\common\security\csrf\CSRFValidationFilter.class
-bip\common\security\xss\XSSFilter.class
-bip\common\security\xss\XSSRequestWrapper.class

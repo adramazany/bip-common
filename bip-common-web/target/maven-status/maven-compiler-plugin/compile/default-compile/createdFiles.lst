@@ -1,9 +1,0 @@
-bip\common\web\servlet\BIPHqlAdminServlet.class
-bip\common\web\servlet\BIPCharConvertResponseWrapper.class
-bip\common\web\servlet\BIPCharConvertRequestFilter.class
-bip\common\web\servlet\BIPCharConvertRequestWrapper.class
-bip\common\web\servlet\BIPSysAdminServlet.class
-bip\common\web\servlet\BIPMdxAdminServlet.class
-bip\common\web\servlet\BIPSqlAdminServlet.class
-bip\common\web\servlet\BIPSessionCounter.class
-bip\common\web\BIPCommonWeb.class

@@ -1,4 +1,0 @@
-bip\common\web\security\XSSUtil.class
-bip\common\web\security\XSSRequestWrapper.class
-bip\common\web\security\XSSRequestWrapper$1.class
-bip\common\web\security\XSSFilter.class

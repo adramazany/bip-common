@@ -47,7 +47,6 @@
         <dependency>
             <groupId>bip.common</groupId>
             <artifactId>bip-common-core</artifactId>
-            <version>2.1.0</version>
         </dependency>
 
 

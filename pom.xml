@@ -31,6 +31,12 @@
     </description>
     <properties>
         <spring.version>3.1.0.RELEASE</spring.version>
+        <maven.compiler.source>7</maven.compiler.source>
+        <maven.compiler.target>7</maven.compiler.target>
+        <!--
+                <maven.compiler.source>19</maven.compiler.source>
+                <maven.compiler.target>19</maven.compiler.target>
+        -->
     </properties>
 
 
@@ -99,10 +105,11 @@
 
             <!-- Database -->
             <dependency>
-                <groupId>com.oracle</groupId>
+                <groupId>com.oracle.database.jdbc</groupId>
                 <artifactId>ojdbc6</artifactId>
-                <version>11.2.0.3</version>
+                <version>11.2.0.4</version>
             </dependency>
+
 
             <dependency>
                 <groupId>com.zaxxer</groupId>
@@ -118,18 +125,20 @@
 
 
 
-            <!-- Olap & mondrian -->
+<!--
+            &lt;!&ndash; Olap & mondrian &ndash;&gt;
             <dependency>
                 <groupId>org.olap4j</groupId>
                 <artifactId>olap4j</artifactId>
-                <version>1.0.1.500</version>
+                <version>1.2.0</version>
+&lt;!&ndash;                <version>1.0.1.500</version>&ndash;&gt;
             </dependency>
             <dependency>
                 <groupId>pentaho</groupId>
                 <artifactId>mondrian</artifactId>
                 <version>3.5.0</version>
             </dependency>
-            <!-- The XOM Dual Streaming/Tree API for Processing XML required : mondrian.olap4j.MondrianOlap4jConnection -->
+            &lt;!&ndash; The XOM Dual Streaming/Tree API for Processing XML required : mondrian.olap4j.MondrianOlap4jConnection &ndash;&gt;
             <dependency>
                 <groupId>eigenbase</groupId>
                 <artifactId>eigenbase-xom</artifactId>
@@ -145,6 +154,7 @@
                 <artifactId>eigenbase-properties</artifactId>
                 <version>1.1.0.10924</version>
             </dependency>
+-->
 
 
             <!-- POI -->
@@ -250,10 +260,11 @@
                 <version>2.5</version>
             </dependency>
 
-
         </dependencies>
 
+
     </dependencyManagement>
+
 
 
 </project>

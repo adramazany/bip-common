@@ -1,16 +1,16 @@
 package bip.etl;
 
-/**
+/*
  * Created by ramezani on 4/5/2018.
  */
 import java.io.*;
-import com.sun.jna.Native;
+//import com.sun.jna.Native;
 
 
 import com.linuxense.javadbf.*;
 import com.sun.jna.Library;
 
-/**
+/*
  * Created by ramezani on 4/5/2018.
  */
 public class ConvertDBF {
@@ -31,7 +31,8 @@ public class ConvertDBF {
 
 
     public static void main(String[] args) {
-        IClsDos2Ms cnv =(IClsDos2Ms)Native.loadLibrary("Dos2MsCnv", IClsDos2Ms.class);
+        IClsDos2Ms cnv =null;
+//        IClsDos2Ms cnv =(IClsDos2Ms)Native.loadLibrary("Dos2MsCnv", IClsDos2Ms.class);
         //IClsDos2Ms cnv =(IClsDos2Ms)Native.loadLibrary("c:\\Users\\ramezani\\Desktop\\sabt\\AMAR\\Dos2MsCnv.dll", IClsDos2Ms.class);
         //IClsDos2Ms cnv =(IClsDos2Ms)Native.loadLibrary("Dos2MsCnv.dll", IClsDos2Ms.class);
         //

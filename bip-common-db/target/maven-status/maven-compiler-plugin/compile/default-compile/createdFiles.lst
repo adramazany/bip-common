@@ -1,7 +1,0 @@
-aip\db\AIPTableModel.class
-aip\db\AIPDBColumn.class
-aip\db\AIPDBUtil.class
-aip\db\AIPSqlException.class
-aip\db\AIPDBTable.class
-aip\db\AIPReportParam.class
-aip\db\AIPPrintParam.class
