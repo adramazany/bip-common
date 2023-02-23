@@ -14,10 +14,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import aip.generator.AIPGenUtil;
+//import aip.generator.AIPGenUtil;
 import aip.util.AIPException;
 import aip.util.AIPUtil;
-import aip.util.AIPWebUserParam;
+//import aip.util.AIPWebUserParam;
 import aip.util.NVL;
 
 

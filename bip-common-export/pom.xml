@@ -83,6 +83,19 @@
             <!--<scope>test</scope>-->
         </dependency>
 
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+        </dependency>
+
     </dependencies>
 
 

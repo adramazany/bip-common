@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>bip.common</groupId>
+        <artifactId>bip-common</artifactId>
+        <version>2.0</version>
+    </parent>
+    <artifactId>bip-common-orm</artifactId>
+    <version>2.0</version>
+
+    <description>
+        14011204 - version 2.0
+        ---
+        feature 1 - extract from bip-util
+    </description>
+
+    <dependencies>
+        <!-- bip-common -->
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-core</artifactId>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.6.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>bip.common</groupId>
+            <artifactId>bip-common-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

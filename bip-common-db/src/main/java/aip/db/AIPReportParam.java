@@ -1,6 +1,6 @@
 package aip.db;
 
-//import aip.util.AIPPrintParam;
+//import bip.common.util.AIPPrintParam;
 //import aip.util.AIPWebUserParam;
 import aip.util.NVL;
 import aip.util.log.NIOLogENT;

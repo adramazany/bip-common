@@ -1,8 +1,8 @@
 package aip.olap.export;
 
 import aip.olap.AIPOlapUtil;
-import aip.olap.util.BIPOlapUtil;
-import aip.olap.util.collections.Tree;
+import bip.common.util.olap.BIPOlapUtil;
+import bip.olap.util.collections.Tree;
 import aip.util.AIPUtil;
 import aip.util.DateConvert;
 import aip.util.NVL;

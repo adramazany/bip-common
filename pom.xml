@@ -22,6 +22,7 @@
         <module>bip-common-web</module>
         <module>bip-common-xssfilter</module>
         <module>bip-common-security</module>
+        <module>bip-common-orm</module>
     </modules>
     <version>2.0</version>
 
@@ -258,6 +259,18 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>2.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>el-api</artifactId>
+                <version>2.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>bip.common</groupId>
+                <artifactId>bip-common-web</artifactId>
+                <version>1.0</version>
             </dependency>
 
         </dependencies>
