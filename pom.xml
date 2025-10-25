@@ -12,17 +12,18 @@
         <module>bip-common-compress</module>
         <module>bip-common-batch</module>
         <module>bip-common-export</module>
-        <module>bip-common-olap</module>
-        <module>bip-util</module>
+<!--        <module>bip-common-olap</module>-->
+<!--        <module>bip-util</module>-->
         <module>bip-common-db</module>
         <module>bip-common-apache</module>
         <module>bip-common-io</module>
         <module>bip-common-obiee</module>
         <module>bip-common-owasp</module>
         <module>bip-common-web</module>
-        <module>bip-common-xssfilter</module>
+<!--        <module>bip-common-xssfilter</module>-->
         <module>bip-common-security</module>
         <module>bip-common-orm</module>
+        <module>bip-common-migrate</module>
     </modules>
     <version>2.0</version>
 

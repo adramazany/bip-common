@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>bip.common</groupId>
+        <artifactId>bip-common</artifactId>
+        <version>2.0</version>
+    </parent>
+
+    <artifactId>bip-common-migrate</artifactId>
+    <packaging>jar</packaging>
+
+    <name>bip-common-migrate</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+<!--
+        <maven.compiler.source>7</maven.compiler.source>
+        <maven.compiler.target>7</maven.compiler.target>
+-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <!--            <version>4.27.0</version>-->
+            <!--            <version>3.10.3</version>-->
+            <!--            <version>2.0.5</version>-->
+            <!--            <version>1.9.5</version>-->
+            <version>4.8.0</version>
+            <!--            java.lang.UnsupportedClassVersionError: org/codehaus/classworlds/Launcher : Unsupported major.minor version 52.0-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+    </dependencies>
+</project>
