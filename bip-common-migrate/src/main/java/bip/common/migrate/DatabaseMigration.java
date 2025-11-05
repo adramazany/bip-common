@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 
 public class DatabaseMigration {
     static final Logger logger = LoggerFactory.getLogger(DatabaseMigration.class);
+
+    public DatabaseMigration(){}
     public DatabaseMigration(String changeLogPath, DataSource dataSource){
         logger.warn("DatabaseMigration initiating ... ");
         System.out.println("DatabaseMigration initiating ... ");
@@ -24,12 +26,26 @@ public class DatabaseMigration {
             logger.error("Migration failed! "+e.getMessage());
         }
     }
+
+    public void migrate_unsafe(String changeLogPath, Connection cn){
+        logger.info("migrate_unsafe starting ...");
+        try {
+            liquibase.database.jvm.JdbcConnection jdbcCN = new liquibase.database.jvm.JdbcConnection(cn);
+            liquibase.Liquibase liquibase = new liquibase.Liquibase(changeLogPath, new liquibase.resource.ClassLoaderResourceAccessor(), jdbcCN);
+            liquibase.update(new liquibase.Contexts(), new liquibase.LabelExpression());
+            logger.info("ReflectionBasedMigration on database succeed.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void migrate(String changeLogPath, Connection cn){
         UnsupportedVersionExceptionHandler handler = new UnsupportedVersionExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(handler);
         Thread t = new Thread(new ReflectionBasedMigration(cn,changeLogPath));
         t.setUncaughtExceptionHandler(handler);
         t.start();
+        logger.warn("Migrate started ... ");
         try {
             t.join();
         } catch (InterruptedException e) {
